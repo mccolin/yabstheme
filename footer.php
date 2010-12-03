@@ -20,8 +20,13 @@
 
   <div class="clear"></div>
 
-			<a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<a href="http://wordpress.org/" title="Semantic Personal Publishing Platform" rel="generator">Proudly powered by WordPress </a>
+  <div id="footnote">
+		<strong><a href="<?php echo home_url( '/' ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></strong>
+		is powered by
+		<strong><a href="http://wordpress.org/" title="Semantic Personal Publishing Platform" rel="generator">WordPress </a></strong>
+		and
+		<strong>9.25% ABV</strong>
+	</div>
 
 <?php
 	/* Always have wp_footer() just before the closing </body>
