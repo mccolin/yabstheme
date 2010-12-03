@@ -14,7 +14,10 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+<div id="bodywrap">
+
+  <div id="content">
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 					<?php if ( is_front_page() ) { ?>
 						<h2><?php the_title(); ?></h2>
@@ -28,7 +31,17 @@ get_header(); ?>
 
 				<?php comments_template( '', true ); ?>
 
-<?php endwhile; ?>
+    <?php endwhile; ?>
+  </div> <!--/content-->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+  <div id="sidebar">
+    <?php get_sidebar(); ?>
+  </div> <!--/sidebar-->
+
+</div> <!--/bodywrap-->
+
+<div id="footerwrap">
+  <div id="footer">
+    <?php get_footer(); ?>
+  </div>
+</div>

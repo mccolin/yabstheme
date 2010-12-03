@@ -9,8 +9,12 @@
 
 get_header(); ?>
 
+<div id="bodywrap">
+
+  <div id="content">
+
 				<h1><?php
-					printf( __( 'Tag Archives: %s', 'twentyten' ), '' . single_tag_title( '', false ) . '' );
+					printf( __( 'Tags / %s', 'twentyten' ), '' . single_tag_title( '', false ) . '' );
 				?></h1>
 
 <?php
@@ -21,5 +25,16 @@ get_header(); ?>
  get_template_part( 'loop', 'tag' );
 ?>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+  </div> <!--/content-->
+
+  <div id="sidebar">
+    <?php get_sidebar(); ?>
+  </div> <!--/sidebar-->
+
+</div> <!--/bodywrap-->
+
+<div id="footerwrap">
+  <div id="footer">
+    <?php get_footer(); ?>
+  </div>
+</div>

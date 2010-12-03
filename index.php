@@ -15,6 +15,9 @@
 
 get_header(); ?>
 
+<div id="bodywrap">
+  
+  <div id="content">
 			<?php
 			/* Run the loop to output the posts.
 			 * If you want to overload this in a child theme then include a file
@@ -22,6 +25,19 @@ get_header(); ?>
 			 */
 			 get_template_part( 'loop', 'index' );
 			?>
+	</div> <!--/content-->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+  <div id="sidebar">
+    <?php get_sidebar(); ?>
+  </div> <!--/sidebar-->
+
+</div> <!--/bodywrap-->
+
+<div class="clear"></div>
+
+<div id="footerwrap">
+  <div id="footer">
+    <?php get_footer(); ?>
+  </div> <!--/footer-->
+</div> <!--/footerwrap-->
+

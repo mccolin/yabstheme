@@ -101,12 +101,14 @@
 			<h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
 			<?php twentyten_posted_on(); ?>
 
+  <span class="body-content">
 	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
 			<?php the_excerpt(); ?>
 	<?php else : ?>
 			<?php the_content( __( 'Continue reading &rarr;', 'twentyten' ) ); ?>
 			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
 	<?php endif; ?>
+  </span>
 
 				<?php if ( count( get_the_category() ) ) : ?>
 					<?php printf( __( 'Posted in %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-cat-links', get_the_category_list( ', ' ) ); ?>
@@ -133,3 +135,5 @@
 				<?php next_posts_link( __( '&larr; Older posts', 'twentyten' ) ); ?>
 				<?php previous_posts_link( __( 'Newer posts &rarr;', 'twentyten' ) ); ?>
 <?php endif; ?>
+
+

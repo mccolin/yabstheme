@@ -9,8 +9,12 @@
 
 get_header(); ?>
 
+<div id="bodywrap">
+
+  <div id="content">
+
 				<h1><?php
-					printf( __( 'Category Archives: %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' );
+					printf( __( 'Topics / %s', 'twentyten' ), '' . single_cat_title( '', false ) . '' );
 				?></h1>
 				<?php
 					$category_description = category_description();
@@ -23,6 +27,18 @@ get_header(); ?>
 				 */
 				get_template_part( 'loop', 'category' );
 				?>
+				
+	</div> <!--/content-->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+    <div id="sidebar">
+      <?php get_sidebar(); ?>
+    </div> <!--/sidebar-->
+
+  </div> <!--/bodywrap-->
+
+  <div id="footerwrap">
+    <div id="footer">
+      <?php get_footer(); ?>
+    </div>
+  </div>
+  

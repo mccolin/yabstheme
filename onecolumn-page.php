@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: One column, no sidebar
+ * Template Name: One column, No sidebar
  *
  * A custom page template without sidebar.
  *
@@ -14,6 +14,11 @@
 
 get_header(); ?>
 
+<div id="bodywrap">
+
+  <div id="content" class="fullpage">
+
+
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 				<h1><?php the_title(); ?></h1>
@@ -25,4 +30,14 @@ get_header(); ?>
 
 <?php endwhile; ?>
 
-<?php get_footer(); ?>
+  </div> <!--/content-->
+
+
+</div> <!--/bodywrap-->
+
+<div id="footerwrap">
+  <div id="footer">
+    <?php get_footer(); ?>
+  </div>
+</div>
+

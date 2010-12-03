@@ -1,13 +1,14 @@
 /*
-Theme Name: Starkers
-Theme URI: http://elliotjaystocks.com
-Description: The totally nude Wordpress theme. Phwoar! (Based on Twenty Ten)
-Version: 3.0
-Author: Elliot Jay Stocks
-Author URI: http://elliotjaystocks.com
-Tags: starkers, naked, clean, basic
+Theme Name: YABS
+Theme URI: http://yetanotherbeershow.com/
+Description: Yet Another Beer Show's official theme
+Version: 0.9
+Author: Colin McCloskey
+Author URI: http://mccolin.com/
+Tags: beer, beer review, yet another beer show, awesome, starkers, naked, clean, basic
 */
 
 @import "css/reset.css";
 @import "css/typography.css";
 @import "css/layout.css";
+@import "css/yabs.css";
