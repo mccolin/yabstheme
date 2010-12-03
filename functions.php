@@ -497,3 +497,32 @@ function twentyten_posted_in() {
 	);
 }
 endif;
+
+
+
+
+/** FUNCTIONS ADDED FOR YET ANOTHER BEER SHOW THEME **/
+
+
+/**
+ * YouTube embed shortcode. Allows embedding of YouTube videos with embed
+ * and thumbnail support in code body
+ */
+function yabs_youtube_code($atts) {
+  extract(shortcode_atts(array(
+    'id' => 'N0BWC4pVjM8',
+    'width' => '560',
+    'height' => '340'
+  ), $atts));
+  
+  return <<<EOT
+<object width="{$width}" height="{$height}">
+  <param name="movie" value="http://www.youtube.com/v/{$id}?fs=1&amp;hl=en_US"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <param name="allowscriptaccess" value="always"></param>
+  <embed src="http://www.youtube.com/v/{$id}?fs=1&amp;hl=en_US" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="{$width}" height="{$height}"></embed>
+</object>
+EOT;
+
+}
+add_shortcode('youtube','yabs_youtube_code');

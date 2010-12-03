@@ -20,9 +20,11 @@
 ?>
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
+<?php if (false) : ?>
 <?php if ( $wp_query->max_num_pages > 1 ) : ?>
 		<?php next_posts_link( __( '&larr; Older posts', 'twentyten' ) ); ?>
 		<?php previous_posts_link( __( 'Newer posts &rarr;', 'twentyten' ) ); ?>
+<?php endif; ?>
 <?php endif; ?>
 
 <?php /* If there are no posts to display, such as an empty archive page */ ?>
@@ -132,8 +134,10 @@
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
+  <div class="prev-next-links">
 				<?php next_posts_link( __( '&larr; Older posts', 'twentyten' ) ); ?>
 				<?php previous_posts_link( __( 'Newer posts &rarr;', 'twentyten' ) ); ?>
+	</div>
 <?php endif; ?>
 
 
