@@ -1,0 +1,303 @@
+
+/* COLORS and BACKGROUND */
+
+body {
+  background: #190B02 url(../images/yabs_bg_grad.png) top center repeat-x;
+  color: #FFF;
+  font-family: Helvetica, Arial, "San Serif";
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #FBDA2D;
+  text-decoration: none;
+}
+a:hover {
+  color: #FD6D17;
+  text-decoration: underline;
+}
+
+div.clear {
+  clear: both;
+}
+
+
+/* HEADER and TOP-NAVIGATION */
+
+div#header-wrap {
+  background: #FFF url(../images/yabs_bg_head_wrap.png) repeat-x bottom center;  /* #D5D3D1 */
+  border-bottom: 1px solid #333;
+  clear: both;
+  height: 60px;
+  margin-bottom: 20px;
+  opacity: 1.0;
+  padding: 0 10px
+}
+div#header {
+  margin: auto;
+  width: 900px;
+}
+div#header h1 {
+  background: url(../images/yabs_logo_header.png) no-repeat;
+  color: transparent;
+  float: left;
+  height: 65px;
+  padding-right: 20px;
+  width: 210px;
+}
+div#header h1 span {
+  display: none;
+}
+div#header #skip-to-content {
+  display: none;
+}
+div#header p#description {
+  display: none;
+}
+div#header ul {
+  float: left;
+}
+
+div#header ul li.menu-item {
+  border-right: 1px solid #999;
+  display: block;
+  float: left;
+  font-family: "American Typewriter","Courier New",Courier,Serif;
+  font-size: 17px;
+  font-weight: normal;
+  height: 25px;
+  list-style-type: none;
+  padding: 25px 20px 10px 20px;
+  text-align: center;
+}
+div#header ul li.menu-item a {
+  color: #190B02;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+div#header ul li.menu-item:hover {
+  background: #C0BCBA;
+}
+div#header ul li.menu-item a:hover {
+  text-decoration: none;
+}
+div#header ul li.current_page_item, div#header ul li.current-category-ancestor {
+  background: #190B02 url(../images/yabs_bg_head_selected.png) bottom center repeat-x;
+  border-bottom: none;
+  border-right: none;
+  font-family: "American Typewriter","Courier New",Courier,Serif;
+  font-size: 17px;
+  font-weight: normal;
+  color: #FFF;
+  height: 26px;
+}
+div#header ul li.current_page_item:hover, div#header ul li.current-category-ancestor:hover {
+  background: #190B02 url(../images/yabs_bg_head_selected.png) bottom center repeat-x;
+  border-bottom: none;
+  border-right: none;
+  font-family: "American Typewriter","Courier New",Courier,Serif;
+  font-weight: normal;
+  color: #FFF;
+  height: 26px;
+}
+div#header ul li.current_page_item a, 
+div#header ul li.current-category-ancestor a,
+div#header ul li.current_page_item a:hover,
+div#header ul li.current-category-ancestor a:hover {
+  color: #FBDA2D;
+  text-decoration: none;
+}
+
+
+
+
+/* BODY CONTENT */
+
+div#bodywrap {
+  margin: auto;
+  padding: 10px;
+  width: 900px;
+}
+div#content {
+  float: left;
+  width: 650px;
+}
+div#content.fullpage {
+  clear: both;
+  float: none;
+  width: 900px;
+}
+div#sidebar {
+  float: left;
+  margin-left: 15px;
+  width: 230px;
+}
+div#footerwrap {
+  background: #DEDEDE url(../images/yabs_bg_foot_wrap.png) repeat-x top center;
+  border-top: 1px solid #333;
+  box-shadow: 0px 1px 10px #000;
+  -moz-box-shadow: 0px 1px 10px #000;
+  clear: both;
+  margin-top: 150px;
+  min-height: 400px;
+  padding: 35px 0 50px;
+}
+div#footer {
+  margin: auto;
+  width: 900px;
+}
+
+
+/* FONTS and STYLES of HEADERS */
+
+div#content h1 {
+  font-family: "American Typewriter", "Courier New", Courier, Serif;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 46px;
+}
+
+h2 {
+  border-top: 1px solid #432;
+  font-family: "American Typewriter", "Courier New", Courier, Serif;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 40px;
+  margin-top: 50px;
+}
+h2:first-child {
+  border:none;
+  margin-top: 5px;
+}
+h2, h2 a {
+  color: #FFF;
+}
+
+div#content h3 {
+  background-color: #333;
+  color: #FD6D17;
+  font-family: "American Typewriter", "Courier New", Courier, Serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 2px 5px;
+}
+
+span.body-content {
+  font-size: 15px;
+  line-height: 20px;
+}
+span.body-content p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+
+/* SIDEBAR WIDGETS */
+
+div#sidebar li.widget-container {
+  display: block;
+  padding: 10px 0 25px;
+  width: 220px;
+}
+div#sidebar h3 {
+  background-color: #DEDEDE;
+  color: #190B02;
+  font-family: "American Typewriter","Courier New",Courier,Serif;
+  font-weight: normal;
+  margin-bottom: 5px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+
+/* FOOTER WIDGETS */
+
+div#footer {
+  color: #333;
+}
+div#footer a {
+  color: #000;
+  text-decoration: none;
+}
+div#footer a:hover {
+  text-decoration: underline;
+}
+div#footer li.widget-container {
+  display: block;
+  float: left;
+  margin-right: 5px;
+  width: 220px;
+}
+div#footer h3 {
+  background-color: #190B02;
+  color: #FD6D17;
+  font-family: "American Typewriter","Courier New",Courier,Serif;
+  font-weight: normal;
+  margin-bottom: 5px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+
+
+/* INDIVIDUAL POST STUFF */
+
+div.leader, div.trailer {
+  font-size: 12px;
+}
+
+div.prev-next-links {
+  clear:both;
+  font-size: 12px;
+  padding: 25px 0;
+}
+div.prev-next-links a[rel="prev"] {
+  float: left;
+}
+div.prev-next-links a[rel="next"] {
+  float: right;
+}
+
+div#content {
+  font-size: 15px;
+  line-height: 20px;
+}
+div#content p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+
+div.post-comments {
+  clear: both;
+  font-size: 12px;
+  padding: 25px 10px;
+}
+div.post-comments form label {
+  display: block;
+  float: left;
+  width: 75px;
+}
+div.post-comments form textarea, div.post-comments form input {
+  background: #DCB;
+  border: 1px solid #432;
+}
+div.post-comments form input[type="submit"] {
+  background: #FD6D17;
+  border: 1px solid #CCC;
+  border-color: #999 #333 #333 #999;
+  color: #FFF;
+  margin-left: 75px;
+  padding: 5px 10px;
+}
+div.post-comments form .form-allowed-tags {
+  display: none;
+}
+div.post-comments form .required {
+  display: none;
+}
+
+
