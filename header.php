@@ -38,6 +38,28 @@
 	 */
 	wp_head();
 ?>
+
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script type="text/javascript"> 
+  $(document).ready(function() {	
+  
+    //Show the first featured video and activate its thumbnail:
+    $("#featured div.video:first").show();
+    $("#featured-thumbs a:first").addClass("active");
+    
+    // Add click actions to all of the featured video thumbs
+    $("#featured-thumbs a.thumblink").click(function(){
+      var thumbId = $(this).attr("id");
+      var vidId = thumbId.replace("thumb","post");
+      $("#featured div.video").hide();
+      $("#featured-thumbs a.thumblink").removeClass("active");
+      $("#"+vidId).show();
+      $("#"+thumbId).addClass("active");
+    });
+
+  });//Close Function
+  </script>
+
 </head>
 
 <body <?php body_class(); ?>>

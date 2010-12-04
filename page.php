@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<div id="bodywrap">
+<div id="body-wrapper">
 
   <div id="content">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -40,7 +40,7 @@ get_header(); ?>
 
 </div> <!--/bodywrap-->
 
-<div id="footerwrap">
+<div id="footer-wrapper">
   <div id="footer">
     <?php get_footer(); ?>
   </div>

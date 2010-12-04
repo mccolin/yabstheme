@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div id="bodywrap">
+<div id="body-wrapper">
 
   <div id="content">
 
@@ -33,7 +33,7 @@ get_header(); ?>
 
 </div> <!--/bodywrap-->
 
-<div id="footerwrap">
+<div id="footer-wrapper">
   <div id="footer">
     <?php get_footer(); ?>
   </div>

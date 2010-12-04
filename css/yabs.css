@@ -175,6 +175,67 @@ div#footer {
 }
 
 
+/* FEATURED VIDEOS ON THE INDEX */
+
+div#featured {
+  background: #190B02;
+  border: 1px solid #333;
+  border-radius: 7px 7px 7px 7px;
+  box-shadow: 0 -5px 10px #999999;
+  margin: auto auto 25px;
+  padding: 15px;
+  width: 800px;
+}
+div#featured div.video {
+  display: none;
+  float: left;
+  padding-right: 10px;
+  width: 490px;
+}
+div#featured div#featured-thumbs {
+  float: left;
+  width: 300px;
+}
+div#featured-thumbs a.thumblink {
+  -webkit-transition: background-color 0.2s linear;
+	background: -moz-linear-gradient(top center, #d1d1d1, #f2f2f2 80%) repeat scroll 0 0 #f2f2f2;
+	background: -webkit-gradient(linear,left bottom,left top,color-stop(.2, #f2f2f2),color-stop(.8, #d1d1d1));
+	background-color: #f2f2f2;	
+  border: 1px solid #333;
+  border-radius: 2px;
+  clear: both;
+  color: #333333;
+  display: block;
+  font-size: 11px;
+  height: 60px;
+  margin: 0 0 5px;
+  max-height: 60px;
+  overflow-y: hidden;
+  padding: 5px;
+  width: 290px;
+}
+div#featured-thumbs a.thumblink.active {
+  -webkit-transition: background-color 0.2s linear;
+	background: -moz-linear-gradient(top center, #d1d1d1, #f0f0f0 80%) repeat scroll 0 0 #f0f0f0;
+	background: -webkit-gradient(linear,left bottom,left top,color-stop(.2, #f0f0f0),color-stop(.8, #d1d1d1));
+  background: #f0f0f0;
+  box-shadow: 0 0 3px #333;
+}
+div#featured-thumbs a.thumblink:hover {
+  text-decoration: none;
+}
+div#featured-thumbs a.thumblink h3 {
+  font-size: 14px;
+  font-weight: bold;
+  font-family:"American Typewriter","Courier New",Courier,Serif;
+}
+div#featured-thumbs a.thumblink img {
+  float: right;
+  width: 78px;
+}
+
+
+
 /* FONTS and STYLES of HEADERS */
 
 div#content h1 {

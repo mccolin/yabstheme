@@ -17,29 +17,43 @@ get_header(); ?>
 
 <div id="body-wrapper">
   
-  <?php if (false) : ?>
+  <style>
+  div#featured div.video {
+    display: none;
+  }
+  </style>
+
   <div id="featured">
-    <?php
-    query_posts('cat=4&posts_per_page=4');
-    if(have_posts()) :
-      while(have_posts()) :
-        the_post();
-        ?>
-        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-          <h2><?php get_permalink(); ?></h2>
-          <div class="entry">
-            <?php $img = get_post_meta($post->ID, 'Featured Thumbnail', true); ?>
-            <img src="<?php echo $img; ?>"/>
-            <?php the_content('Read More'); ?>
-          </div>
-        </div>
-        <?php
-      endwhile;
-    endif;
-    wp_reset_query();
-    ?>
+    <?php $temp_query = $wp_query; ?>
+    <?php query_posts('category_name=video&showposts=4'); ?>
+    <?php while (have_posts()) : the_post(); ?>
+      <div class="video" id="video-post-<?php the_ID(); ?>">
+        <?php if($content = $post->post_content) : ?>
+          <?php echo extract_youtube_video($content, 490, 300) ?>
+        <?php endif; ?>
+      </div>
+    <?php endwhile; ?>
+    <?php wp_reset_query();?>
+    
+    <div id="featured-thumbs">
+    <?php $temp_query = $wp_query; ?>
+    <?php query_posts('category_name=video&showposts=4'); ?>
+    <?php while (have_posts()) : the_post(); ?>
+      <?php if($content = $post->post_content) : ?>
+        <a class="thumblink" id="video-thumb-<?php the_ID(); ?>" href="#">
+          <img src=" <?php echo extract_youtube_thumb_url($content) ?>" width="96"/>
+          <h3><?php echo get_the_title($post->ID); ?></h3>
+          <?php if ( $posttags = get_the_tags() ) :
+            foreach($posttags as $tag) { echo $tag->name . "&nbsp;"; }
+          endif; ?>
+        </a>
+      <?php endif; ?>
+    <?php endwhile; ?>
+    <?php wp_reset_query();?>
+    </div> <!--/featured-thumbs-->
+    
+    <div class="clear"></div>
   </div>
-  <?php endif; ?>
   
   
   <div id="content">
