@@ -2,9 +2,10 @@
 /* COLORS and BACKGROUND */
 
 body {
-  background: #190B02 url(../images/yabs_bg_grad.png) top center repeat-x;
-  color: #FFF;
-  font-family: Helvetica, Arial, "San Serif";
+	background: #f2f2f2;
+  color: #111;
+  font-family: Helvetica, Arial, "Sans Serif";
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -25,13 +26,11 @@ div.clear {
 
 /* HEADER and TOP-NAVIGATION */
 
-div#header-wrap {
-  background: #FFF url(../images/yabs_bg_head_wrap.png) repeat-x bottom center;  /* #D5D3D1 */
-  border-bottom: 1px solid #333;
+div#header-wrapper {
+  background: #190B02;
   clear: both;
-  height: 60px;
-  margin-bottom: 20px;
-  opacity: 1.0;
+  height: 70px;
+  margin-bottom: 30px;
   padding: 0 10px
 }
 div#header {
@@ -39,83 +38,109 @@ div#header {
   width: 900px;
 }
 div#header h1 {
-  background: url(../images/yabs_logo_header.png) no-repeat;
+  background: url(../images/yabs_top_logo.png) no-repeat;
   color: transparent;
   float: left;
-  height: 65px;
+  height: 89px;
   padding-right: 20px;
-  width: 210px;
+  width: 254px;
 }
 div#header h1 span {
   display: none;
 }
-div#header #skip-to-content {
-  display: none;
-}
-div#header p#description {
-  display: none;
-}
-div#header ul {
-  float: left;
+
+
+
+/** PRIMARY NAVIGATION TABS **/
+
+/** BEGIN TAB DECLARATIONS **/
+
+ul#menu-primary {   /* Formerly: ul#navigation */
+	height: 36px;
+	padding: 34px 20px 0 30px;
+	/* width: 904px; */
+	margin: 0 auto;
+	position: relative;
+	overflow: hidden;
 }
 
-div#header ul li.menu-item {
-  border-right: 1px solid #999;
-  display: block;
-  float: left;
-  font-family: "American Typewriter","Courier New",Courier,Serif;
-  font-size: 17px;
-  font-weight: normal;
-  height: 25px;
-  list-style-type: none;
-  padding: 25px 20px 10px 20px;
-  text-align: center;
+ul#menu-primary li {
+	background-color: #C04800;  /* #2B477D; */
+	border: solid 1px #D86000; /* #415F9D; */
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	float: left;
+	margin: 0 10px 0 0;
+	position: relative;
+	/* width: 168px; */
+	z-index: 1;
 }
-div#header ul li.menu-item a {
-  color: #190B02;
-  font-weight: normal;
-  text-decoration: none;
-  text-transform: uppercase;
+
+ul#menu-primary li.current-menu-item {
+	z-index: 3;
 }
-div#header ul li.menu-item:hover {
-  background: #C0BCBA;
+
+ul#menu-primary li.shadow {
+	background: none;
+	border: none;
+	bottom: -3px;
+	box-shadow: #111 0 -2px 6px;
+	-webkit-box-shadow: #111 0 -2px 6px;
+	-moz-box-shadow: #111 0 -2px 6px;
+	height: 2px;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	z-index: 2;
 }
-div#header ul li.menu-item a:hover {
-  text-decoration: none;
+
+ul#menu-primary li a:link, ul#menu-primary li a:visited {
+	background: #C04800; /* #2B477D; */
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	color: #fff;
+	display: block;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	height: 40px;
+	line-height: 36px;
+	letter-spacing: 1px;
+	outline: none;
+	padding: 0 20px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	-webkit-transition: background-color 0.3s linear;
+	-moz-transition: background-color 0.3s linear;
+	-o-transition: background-color 0.3s linear;
+	/* width: 168px; */
 }
-div#header ul li.current_page_item, div#header ul li.current-category-ancestor {
-  background: #190B02 url(../images/yabs_bg_head_selected.png) bottom center repeat-x;
-  border-bottom: none;
-  border-right: none;
-  font-family: "American Typewriter","Courier New",Courier,Serif;
-  font-size: 17px;
-  font-weight: normal;
-  color: #FFF;
-  height: 26px;
+
+ul#menu-primary li a:hover {
+	background-color: #D87800;
 }
-div#header ul li.current_page_item:hover, div#header ul li.current-category-ancestor:hover {
-  background: #190B02 url(../images/yabs_bg_head_selected.png) bottom center repeat-x;
-  border-bottom: none;
-  border-right: none;
-  font-family: "American Typewriter","Courier New",Courier,Serif;
-  font-weight: normal;
-  color: #FFF;
-  height: 26px;
+
+ul#menu-primary li.current-menu-item a:link, ul#menu-primary li.current-menu-item a:visited {
+	-webkit-transition: background-color 0.2s linear;
+	background: -moz-linear-gradient(top center, #d1d1d1, #f2f2f2 80%) repeat scroll 0 0 #f2f2f2;
+	background: -webkit-gradient(linear,left bottom,left top,color-stop(.2, #f2f2f2),color-stop(.8, #d1d1d1));
+	background-color: #f2f2f2;
+	border: solid 1px #fff;
+	color: #2B477D;
 }
-div#header ul li.current_page_item a, 
-div#header ul li.current-category-ancestor a,
-div#header ul li.current_page_item a:hover,
-div#header ul li.current-category-ancestor a:hover {
-  color: #FBDA2D;
-  text-decoration: none;
-}
+
 
 
 
 
 /* BODY CONTENT */
 
-div#bodywrap {
+div#body-wrapper {
+	background: #f2f2f2;
   margin: auto;
   padding: 10px;
   width: 900px;
@@ -134,9 +159,9 @@ div#sidebar {
   margin-left: 15px;
   width: 230px;
 }
-div#footerwrap {
-  background: #DEDEDE url(../images/yabs_bg_foot_wrap.png) repeat-x top center;
-  border-top: 1px solid #333;
+div#footer-wrapper {
+  background: #190B02;
+  border-top: 1px solid #291B12;
   box-shadow: 0px 1px 10px #000;
   -moz-box-shadow: 0px 1px 10px #000;
   clear: both;
@@ -172,7 +197,12 @@ h2:first-child {
   margin-top: 5px;
 }
 h2, h2 a {
-  color: #FFF;
+  color: #190B02;
+  text-decoration: none;
+}
+h2 a:hover {
+  color: #C04800;
+  text-decoration: none;
 }
 
 div#content h3 {
@@ -203,12 +233,13 @@ div#sidebar li.widget-container {
   width: 220px;
 }
 div#sidebar h3 {
-  background-color: #DEDEDE;
-  color: #190B02;
+  background: url(../images/h3_bg_orange2.png) no-repeat;
+  color: #FFF;
   font-family: "American Typewriter","Courier New",Courier,Serif;
   font-weight: normal;
+  height: 20px;
   margin-bottom: 5px;
-  padding: 5px;
+  padding: 10px 5px;
   text-transform: uppercase;
 }
 
@@ -216,13 +247,14 @@ div#sidebar h3 {
 /* FOOTER WIDGETS */
 
 div#footer {
-  color: #333;
+  color: #999;
 }
 div#footer a {
-  color: #000;
+  color: #CCC;
   text-decoration: none;
 }
 div#footer a:hover {
+  color: #FFF;
   text-decoration: underline;
 }
 div#footer li.widget-container {
@@ -232,13 +264,25 @@ div#footer li.widget-container {
   width: 220px;
 }
 div#footer h3 {
-  background-color: #190B02;
-  color: #FD6D17;
+  color: #FFFFFF;
   font-family: "American Typewriter","Courier New",Courier,Serif;
   font-weight: normal;
+  height: 20px;
   margin-bottom: 5px;
-  padding: 5px;
+  padding: 10px 5px;
   text-transform: uppercase;
+}
+div#footer li.widget_text h3 {
+  background: url(../images/h3_bg_orange2.png) no-repeat;  
+}
+div#footer li.widget_nav_menu h3 {
+  background: url(../images/h3_bg_pumpkin1.png) no-repeat;  
+}
+div#footer li.widget_recent_comments h3 {
+  background: url(../images/h3_bg_yellow1.png) no-repeat;
+}
+div#footer li.widget_meta h3 {
+  background: url(../images/h3_bg_orange1.png) no-repeat;
 }
 
 div#footer div#footnote {

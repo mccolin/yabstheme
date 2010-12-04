@@ -15,7 +15,32 @@
 
 get_header(); ?>
 
-<div id="bodywrap">
+<div id="body-wrapper">
+  
+  <?php if (false) : ?>
+  <div id="featured">
+    <?php
+    query_posts('cat=4&posts_per_page=4');
+    if(have_posts()) :
+      while(have_posts()) :
+        the_post();
+        ?>
+        <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+          <h2><?php get_permalink(); ?></h2>
+          <div class="entry">
+            <?php $img = get_post_meta($post->ID, 'Featured Thumbnail', true); ?>
+            <img src="<?php echo $img; ?>"/>
+            <?php the_content('Read More'); ?>
+          </div>
+        </div>
+        <?php
+      endwhile;
+    endif;
+    wp_reset_query();
+    ?>
+  </div>
+  <?php endif; ?>
+  
   
   <div id="content">
 			<?php
@@ -35,7 +60,7 @@ get_header(); ?>
 
 <div class="clear"></div>
 
-<div id="footerwrap">
+<div id="footer-wrapper">
   <div id="footer">
     <?php get_footer(); ?>
   </div> <!--/footer-->

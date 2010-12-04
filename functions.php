@@ -526,3 +526,4 @@ EOT;
 
 }
 add_shortcode('youtube','yabs_youtube_code');
+
