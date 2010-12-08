@@ -42,21 +42,19 @@
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
   <script type="text/javascript"> 
   $(document).ready(function() {	
-  
     //Show the first featured video and activate its thumbnail:
-    $("#featured div.video:first").show();
-    $("#featured-thumbs a:first").addClass("active");
+    $("#features .video:first").show();    
+    $("#thumb-container .thumb:first").addClass("active");
     
     // Add click actions to all of the featured video thumbs
-    $("#featured-thumbs a.thumblink").click(function(){
+    $("#thumb-container .thumb").click(function(){
       var thumbId = $(this).attr("id");
-      var vidId = thumbId.replace("thumb","post");
-      $("#featured div.video").hide();
-      $("#featured-thumbs a.thumblink").removeClass("active");
+      var vidId = thumbId.replace("thumb","video");
+      $("#features .video").hide();
       $("#"+vidId).show();
+      $("#thumb-container .thumb").removeClass("active");
       $("#"+thumbId).addClass("active");
-    });
-    
+    });   
   });// end ready()
   </script>
 
@@ -64,19 +62,25 @@
 
 <body <?php body_class(); ?>>
 
+  <div id="ticker-wrapper" class="wrapper">
+    <div id="ticker" class="section">
+      JT and Steve review the latest from Ommegang. <a href="#">Watch the video here</a>.
+    </div> <!--/ticker-->
+  </div> <!--/ticker-wrapper-->
 
-  <div id="header-wrapper">
-    <div id="header">
+  <div id="header-wrapper" class="wrapper">
+    <div id="header" class="section">
       <h1>
-        <span>
-    		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-    	  </span>
+    		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+    		  <img src="<?php echo get_bloginfo('template_url'); ?>/images/yabs_logo_small.png" alt="<?php bloginfo( 'name' ); ?>"/>
+    		  <span><?php bloginfo( 'name' ); ?></span>
+    		</a>
     	</h1>
   	
   		<?php wp_nav_menu( array( 'container_class' => 'navigation-container', 'theme_location' => 'primary' ) ); ?>
     	
-    </div>
-  </div>
+    </div> <!--/header-->
+  </div> <!--/header-wrapper-->
 
 
 
