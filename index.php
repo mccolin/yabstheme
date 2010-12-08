@@ -43,7 +43,7 @@ get_header(); ?>
         <!-- FEATURED VIDEO POST: ID: <?php the_ID(); ?> -->
         <div class="video" id="video-<?php the_ID(); ?>">
           <?php if($content = $post->post_content) : ?>
-            <?php echo extract_youtube_video($content, 490, 276) ?>
+            <?php echo extract_youtube_video($content, 490, 300) ?>
           <?php endif; ?>
         </div>
       <?php endwhile; ?>
