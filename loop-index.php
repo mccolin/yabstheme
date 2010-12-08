@@ -144,8 +144,8 @@
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>
   <div class="prev-next-links">
-				<?php next_posts_link( __( '&larr; Older posts', 'twentyten' ) ); ?>
-				<?php previous_posts_link( __( 'Newer posts &rarr;', 'twentyten' ) ); ?>
+		<?php next_posts_link( __( '&larr; Older Posts', 'twentyten' ) ); ?>
+		<?php previous_posts_link( __( 'Newer Posts &rarr;', 'twentyten' ) ); ?>
 	</div>
 <?php endif; ?>
 

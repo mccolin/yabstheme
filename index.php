@@ -80,7 +80,9 @@ get_header(); ?>
     
     <div id="content" class="section">
         
+        <?php if(is_home() && $post==$posts[0] && !is_paged()) : ?>
         <h2 class="mast"><span>Yet Another Beer Blog</span></h2>
+        <?php endif; ?>
       
   			<?php
   			/* Run the loop to output the posts.

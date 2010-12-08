@@ -14,22 +14,20 @@
 
 get_header(); ?>
 
-<div id="body-wrapper">
+<div id="content-wrapper" class="wrapper">
 
-  <div id="content">
+  <div id="content" class="section">
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-					<?php if ( is_front_page() ) { ?>
-						<h2><?php the_title(); ?></h2>
-					<?php } else { ?>	
-						<h1><?php the_title(); ?></h1>
-					<?php } ?>				
+      <div class="page-content">
+				<h2><?php the_title(); ?></h2>
 
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
-						<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
+				<?php the_content(); ?>
+				<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
+				<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
 
 				<?php comments_template( '', true ); ?>
+			</div>
 
     <?php endwhile; ?>
   </div> <!--/content-->
@@ -38,10 +36,14 @@ get_header(); ?>
     <?php get_sidebar(); ?>
   </div> <!--/sidebar-->
 
-</div> <!--/bodywrap-->
+<div class="clear"></div>
+</div> <!--/content-wrapper-->
 
-<div id="footer-wrapper">
-  <div id="footer">
+
+<div id="footer-wrapper" class="wrapper">
+  <div id="footer" class="section">
+    <h2 class="mast"><span>Yet Even More Stuff</span></h2>
     <?php get_footer(); ?>
-  </div>
-</div>
+  </div> <!--/footer-->
+</div> <!--/footerwrap-->
+

@@ -248,6 +248,11 @@ ul#menu-primary li.current-menu-item a:hover {
   margin-right: 20px;
   width: 580px;
 }
+#content.full-width {
+  width: 900px;
+  margin: 0;
+  float: none;
+}
 
 #sidebar {
   background: #F5F4F2;
@@ -318,36 +323,65 @@ ul#menu-primary li.current-menu-item a:hover {
 
 
 
-/** INDIVIDUAL POSTS **/
+/** INDIVIDUAL POSTS and PAGES **/
 
 .post {
   padding-top: 15px;
 }
-.post a {}
-.post a:hover {
+.page-content {
+  padding-top: 0;
+}
+.post a, .page-content a {}
+.post a:hover, .page-content a:hover {
   color: #D27A20;
 }
 .post h2 {
+  color: #D27A20;
   font-size: 1.75em;
   line-height: 1.5;
+}
+.page-content h2 {
+  color: #000;
+  font-size: 2.5em;
+  font-weight: lighter;
+  margin-bottom: 0.5em;
 }
 .post h2 a {
   color: #D27A20;
   text-decoration: none;
 }
-.post .dateline, .post .postline {
+.page-content h2 a {
+  color: #000;
+  text-decoration: none;
+}
+.post .dateline, .post .postline, .page-content .dateline, .page-content .postline {
   display: block;
   font-size: 0.9em;
   font-weight: bold;
   padding: 2px 0 10px;
 }
-.post .body-content {
+.post .body-content, .page-content .body-content {
   line-height: 1.5;
 }
-.post .body-content p {
+.post .body-content p, .page-content .body-content p {
   margin-bottom: 1.25em;
   margin-top: 0.5em;
 }
 
 
 
+/** POST PAGE-TURNERS **/
+.prev-next-links {
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+.prev-next-links a {
+  color: #D27A20;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+.prev-next-links a:hover {
+  background-color: #D27A20;
+  color: #FFF;
+}
