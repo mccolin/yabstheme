@@ -15,7 +15,7 @@
 
 get_header(); ?>
 
-
+<?php if(is_home() && $post==$posts[0] && !is_paged()) : ?>
 <div id="features-wrapper" class="wrapper">
   
   <div id="features" class="section">
@@ -74,7 +74,7 @@ get_header(); ?>
   </div> <!--/features-->
   
 </div> <!--/features-wrapper-->
-  
+<?php endif; // only show features on home ?>
   
   <div id="content-wrapper" class="wrapper">
     
