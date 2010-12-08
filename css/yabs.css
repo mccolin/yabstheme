@@ -17,13 +17,8 @@ body {
 a {
   color: #333;
 }
-a:hover {
-  color: #;  
-}
-/*a:visited {
-  color: #666;
-}
-*/
+a:hover {}
+a:visited {}
 
 .clear {
   clear: both;
@@ -242,7 +237,117 @@ ul#menu-primary li.current-menu-item a:hover {
 }
 
 
+/** MAJOR CONTENT REGION, SIDEBAR **/
 
+#content-wrapper {
+  margin: 0 auto 75px;
+  width: 900px;
+}
+#content {
+  float: left;
+  margin-right: 20px;
+  width: 580px;
+}
+
+#sidebar {
+  background: #F5F4F2;
+  border-bottom: 2px solid #999;
+  border-top: 2px solid #999;
+  float: right;
+  margin: 50px 0;
+  padding: 0 15px 25px;
+  width: 270px;
+}
+
+/** SIDEBAR WIDGETS **/
+
+#sidebar .widget-container h3.widget-title {
+  background: #999;
+  clear: both;
+  color: #FFF;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 20px 0 5px;
+  padding: 5px 10px;
+}
+
+#sidebar .xoxo .widget-container:first-child h3 {
+  margin: 0;
+  position: relative;
+  top: -15px;
+}
+
+
+/** FOOTER WIDGETS **/
+
+#footer h2.mast {
+  margin-bottom: -1.5em;
+}
+
+#footer .widget-container {
+  float:left;
+  margin-left: 20px;
+  padding: 5px;
+  width: 200px;
+}
+#footer .widget-container:first-child {
+  margin-left: 0;
+  width: 425px;
+}
+#footer .widget-container h3.widget-title {
+  color: #666;
+  display: inline-block;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 20px 0 5px;
+  padding: 5px 0;
+}
+#footer .widget-container.widget_nav_menu {
+  text-align: right;
+  width: 200px;
+}
+
+#footnote {
+  clear: both;
+  margin: auto;
+  padding: 25px 0;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+/** INDIVIDUAL POSTS **/
+
+.post {
+  padding-top: 15px;
+}
+.post a {}
+.post a:hover {
+  color: #D27A20;
+}
+.post h2 {
+  font-size: 1.75em;
+  line-height: 1.5;
+}
+.post h2 a {
+  color: #D27A20;
+  text-decoration: none;
+}
+.post .dateline, .post .postline {
+  display: block;
+  font-size: 0.9em;
+  font-weight: bold;
+  padding: 2px 0 10px;
+}
+.post .body-content {
+  line-height: 1.5;
+}
+.post .body-content p {
+  margin-bottom: 1.25em;
+  margin-top: 0.5em;
+}
 
 
 
