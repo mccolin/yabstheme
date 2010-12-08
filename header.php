@@ -41,6 +41,20 @@
 
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
   <script type="text/javascript"> 
+  
+  // Function controlling the news story ticker at page top
+  function fetchTickerStory() {
+    var rand = Math.floor(Math.random()*3);
+    if (rand == 0)
+      $("#ticker").html("Colin and Kasey explore the deliciousness of Chimay Grande Reserve. <a href='#'>Watch now</a>.");
+    else if (rand == 1)
+      $("#ticker").html("Does a beer with raisins taste any good? <a href='#'>We try one</a>. <a href='#'>And another</a>.");
+    else if (rand == 2)
+      $("#ticker").html("Steve and JT get started brewing at home. It's a homebrew crash course. <a href='#'>Check it out</a>!");
+    setTimeout("fetchTickerStory();", 5000);
+    return(false);
+  }
+  
   $(document).ready(function() {	
     //Show the first featured video and activate its thumbnail:
     $("#features .video:first").show();    
@@ -55,6 +69,10 @@
       $("#thumb-container .thumb").removeClass("active");
       $("#"+thumbId).addClass("active");
     });   
+    
+    // Kickoff the story ticker at page-top
+    setTimeout("fetchTickerStory();", 5000);
+    
   });// end ready()
   </script>
 
