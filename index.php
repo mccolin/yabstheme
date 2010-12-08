@@ -20,19 +20,11 @@ get_header(); ?>
   
   <div id="features" class="section">
     <div id="intro">
-      <h2>We choose the beer and get to drink it, too!</h2>
-      <p>
-        Welcome to <strong>Yet Another Beer Show</strong>. We give
-        you two guys, reviewing one beer, nearly every day of the week.
-      </p>
-      <p>
-        Check out our <strong>latest videos</strong>
-        in the player to the right and browse <strong>our beer history</strong> using
-        the menu at the top. Welcome!
-      </p>
-      <p>
-        <a href="#">Learn about beer</a> or <a href="#">Watch a video</a>
-      </p>
+      <?php 
+      $page = get_page_by_title('Intro');
+      $content = $page->post_content;
+      echo $content
+      ?>
     </div>
     
     <div id="player">
