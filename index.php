@@ -27,6 +27,7 @@ get_header(); ?>
     <?php $temp_query = $wp_query; ?>
     <?php query_posts('category_name=video&showposts=4'); ?>
     <?php while (have_posts()) : the_post(); ?>
+      <!-- FEATURED VIDEO POST: ID: <?php the_ID(); ?> -->
       <div class="video" id="video-post-<?php the_ID(); ?>">
         <?php if($content = $post->post_content) : ?>
           <?php echo extract_youtube_video($content, 490, 300) ?>
@@ -55,20 +56,26 @@ get_header(); ?>
     <div class="clear"></div>
   </div>
   
-  
-  <div id="content">
-			<?php
-			/* Run the loop to output the posts.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-index.php and that will be used instead.
-			 */
-			 get_template_part( 'loop', 'index' );
-			?>
-	</div> <!--/content-->
+  <div id="content-wrapper">
+  <div id="content-container">
+    
+    <div id="content">
+  			<?php
+  			/* Run the loop to output the posts.
+  			 * If you want to overload this in a child theme then include a file
+  			 * called loop-index.php and that will be used instead.
+  			 */
+  			 get_template_part( 'loop', 'index' );
+  			?>
+  	</div> <!--/content-->
 
-  <div id="sidebar">
-    <?php get_sidebar(); ?>
-  </div> <!--/sidebar-->
+    <div id="sidebar">
+      <?php get_sidebar(); ?>
+    </div> <!--/sidebar-->
+  
+  </div> <!--/content-container-->
+  <div class="clear"></div>
+  </div> <!--/content-wrapper-->
 
 </div> <!--/bodywrap-->
 

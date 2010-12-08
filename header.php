@@ -56,8 +56,8 @@
       $("#"+vidId).show();
       $("#"+thumbId).addClass("active");
     });
-
-  });//Close Function
+    
+  });// end ready()
   </script>
 
 </head>

@@ -27,7 +27,7 @@ div.clear {
 /* HEADER and TOP-NAVIGATION */
 
 div#header-wrapper {
-  background: #190B02;
+  background: #5D2300;  /* #190B02; */
   clear: both;
   height: 70px;
   margin-bottom: 30px;
@@ -142,7 +142,15 @@ ul#menu-primary li.current-menu-item a:link, ul#menu-primary li.current-menu-ite
 div#body-wrapper {
 	background: #f2f2f2;
   margin: auto;
-  padding: 10px;
+  padding: 10px 0;
+  width: 100%;
+}
+div#content-wrapper {
+  background: #5D2300;
+  width: 100%;
+}
+div#content-container {
+  margin: auto;
   width: 900px;
 }
 div#content {
@@ -160,7 +168,7 @@ div#sidebar {
   width: 230px;
 }
 div#footer-wrapper {
-  background: #190B02;
+  background: #5D2300;
   border-top: 1px solid #291B12;
   box-shadow: 0px 1px 10px #000;
   -moz-box-shadow: 0px 1px 10px #000;
@@ -178,13 +186,10 @@ div#footer {
 /* FEATURED VIDEOS ON THE INDEX */
 
 div#featured {
-  background: #190B02;
-  border: 1px solid #333;
-  border-radius: 7px 7px 7px 7px;
-  box-shadow: 0 -5px 10px #999999;
-  margin: auto auto 25px;
-  padding: 15px;
-  width: 800px;
+  background: transparent;
+  margin: auto;
+  padding: 15px 0 25px;
+  width: 900px;
 }
 div#featured div.video {
   display: none;
