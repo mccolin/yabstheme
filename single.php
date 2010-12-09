@@ -20,7 +20,10 @@ get_header(); ?>
 
     <span class="dateline"><?php twentyten_posted_on(); ?></span>
 
+    <span class="body-content">
 		<?php the_content(); ?>
+		</span>
+		
 		<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
 
 

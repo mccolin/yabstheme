@@ -21,8 +21,10 @@ get_header(); ?>
 
       <div class="page-content">
 				<h1><?php the_title(); ?></h1>
-
+        
+        <span class="body-content">
 				<?php the_content(); ?>
+				</span>
 				<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '', '' ); ?>
 
