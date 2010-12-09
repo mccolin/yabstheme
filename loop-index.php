@@ -21,7 +21,8 @@
 
 <?php
   /* Exclude posts that are videos from the loop */
-  query_posts($query_string . '&cat=-4');
+  $page = get_query_var('paged');
+  query_posts($query_string . '&cat=-4&paged='. $page);
 ?>
 
 
