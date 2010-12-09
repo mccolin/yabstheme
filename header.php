@@ -73,13 +73,8 @@
   }
   
   // Function to stop a thumbnail from rotating when moused off
-  function unRotateYouTubeThumb(imgId) {
+  function unRotateYouTubeThumb() {
     clearTimeout(THUMB_TIMER);
-    var img = $("#"+imgId);
-    var src = img.attr("src");              // eg: http://img.youtube.com/vi/1U7bigXhRI4/0.jpg
-    var basename = src.split("/").pop();
-    newSrc = src.replace(basename, "0.jpg");
-    img.attr("src", newSrc);
   }
   
   
@@ -109,7 +104,7 @@
     $("#thumb-container .thumb").mouseleave(function(){
       var divId = $(this).attr("id");
       var imgId = divId.replace("thumb","img");
-      unRotateYouTubeThumb( imgId );
+      unRotateYouTubeThumb();
     });
     
     // Kickoff the story ticker at page-top
