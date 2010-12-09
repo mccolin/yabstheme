@@ -259,12 +259,26 @@ ul#menu-primary li.current-menu-item a:hover {
   border-bottom: 2px solid #999;
   border-top: 2px solid #999;
   float: right;
+  line-height: 1.4;
   margin: 50px 0;
   padding: 0 15px 25px;
   width: 270px;
 }
 
 /** SIDEBAR WIDGETS **/
+
+#sidebar a {
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+}
+#footer a {
+  border-bottom: 1px solid #999;
+  text-decoration: none;
+}
+#sidebar a:hover, #footer a:hover {
+  border-bottom: 1px solid #999;
+  color: #D27A20;
+}
 
 #sidebar .widget-container h3.widget-title {
   background: #999;
@@ -445,4 +459,89 @@ ul#menu-primary li.current-menu-item a:hover {
 .prev-next-links a[rel="next"] {
   float: right;
 }
+
+
+
+/** VIDEO GALLERY **/
+
+.page-content .gallery {
+  
 }
+.page-content .gallery .video {
+  background: #000;
+  border: 2px solid #000;
+  color: #FFF;
+  float: left;
+  height: 275px;
+  margin: 0 10px 10px 0;
+  padding: 0;
+  width: 210px;
+}
+.page-content .gallery .video .clip {
+  border: none;
+  height: 112px;
+  position: relative;
+  width: 200px;
+}
+.page-content .gallery .video .clip img {
+  clip:rect(20px, 210px, 138px, 0px);
+  position:absolute;
+  top:-20px;
+  width:210px;
+}
+.page-content .gallery .video h3 {
+  background: #D27A20;
+  color: #FFF;
+  font-size: 1.5em;
+  font-weight: lighter;
+  line-height: 1.5em;
+  max-height: 1.5em;
+  overflow: hidden;
+  padding: 2px 5px;
+}
+.page-content .gallery .video h3 a {
+  color: #FFF;
+  text-decoration: none;
+}
+.page-content .gallery .video h3 a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+.page-content .gallery .video .excerpt {
+  font-size: 11px;
+  height: 115px;
+  line-height: 15px;
+  max-height: 115px;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.page-content .gallery .video:hover {
+  position: relative;
+}
+
+.page-content .gallery .video:hover h3 {
+  height: none;
+  left: 0;
+  max-height: none;
+  overflow: visible;
+  position: absolute;
+  top: 0;
+  width: 200px;
+  z-index: 5;
+}
+.page-content .gallery .video:hover .clip {
+  border: none;
+  height: 112px;
+  position: absolute;
+  top: 33px;
+  left: 0;
+  width: 200px;
+}
+.page-content .gallery .video:hover .excerpt {
+  bottom: 5px;
+  left: 0;
+  position: absolute;
+}
+
+
