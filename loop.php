@@ -97,8 +97,23 @@
 				<?php comments_popup_link( __( 'Leave a comment', 'twentyten' ), __( '1 Comment', 'twentyten' ), __( '% Comments', 'twentyten' ) ); ?>
 				<?php edit_post_link( __( 'Edit', 'twentyten' ), '| ', '' ); ?>
 
-<?php /* How to display all other posts. */ ?>
 
+  <?php /* How to display posts in the beer category */ ?>
+  <?php elseif ( is_category("beer") ) : ?>
+
+    <div class="beer" id="beer-<?php the_ID(); ?>">
+      <h2><a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'twentyten' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
+      <?php
+				$tags_list = get_the_tag_list( '', ', ' );
+				if ( $tags_list ):
+			?>
+				<?php printf( __( 'Tagged %2$s', 'twentyten' ), 'entry-utility-prep entry-utility-prep-tag-links', $tags_list ); ?>
+				|
+			<?php endif; ?>
+      This is a beer.
+    </div>
+
+  <?php /* How to display all other posts. */ ?>
 	<?php else : ?>
 	  
 	  <div class="post" id="post-<?php the_ID(); ?>">
@@ -108,6 +123,7 @@
       <span class="body-content">
     	<?php if ( is_archive() || is_search() ) : // Only display excerpts for archives and search. ?>
     			<?php the_excerpt(); ?>
+    			FOOOOP
     	<?php else : ?>
     			<?php the_content( __( 'Continue reading &rarr;', 'twentyten' ) ); ?>
     			<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>

@@ -9,46 +9,38 @@
 
 get_header(); ?>
 
-<div id="body-wrapper">
+<div id="content-wrapper" class="wrapper">
   
-  <div id="content">
+  <div id="content" class="section">
 
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-					<h1><?php the_title(); ?></h1>
+  <div class="post">
+		<h2><?php the_title(); ?></h2>
 
-          <div class="leader">
-						<?php twentyten_posted_on(); ?>
-					</div>
+    <span class="dateline"><?php twentyten_posted_on(); ?></span>
 
-						<?php the_content(); ?>
-						<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
+		<?php the_content(); ?>
+		<?php wp_link_pages( array( 'before' => '' . __( 'Pages:', 'twentyten' ), 'after' => '' ) ); ?>
 
-<?php if ( get_the_author_meta( 'description' ) ) : // If a user has filled out their description, show a bio on their entries  ?>
-  <?php if (false) : ?>
-							<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'twentyten_author_bio_avatar_size', 60 ) ); ?>
-							<h2><?php printf( esc_attr__( 'About %s', 'twentyten' ), get_the_author() ); ?></h2>
-							<?php the_author_meta( 'description' ); ?>
-							<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-								<?php printf( __( 'View all posts by %s &rarr;', 'twentyten' ), get_the_author() ); ?>
-							</a>
-	<?php endif; ?>
-<?php endif; ?>
 
-      <div class="trailer">
-				<?php twentyten_posted_in(); ?>
+    <span class="postline">
+			<?php twentyten_posted_in(); ?>
 						
-				<?php edit_post_link( __( 'Authors: Edit this Post', 'twentyten' ), '', '' ); ?>
-			</div>
+			<?php edit_post_link( __( 'Authors: Edit this Post', 'twentyten' ), '', '' ); ?>
+		</span>
 
-      <div class="prev-next-links">
-				<?php previous_post_link( '%link', '' . _x( '&larr;', 'Previous post link', 'twentyten' ) . ' %title' ); ?>
-				<?php next_post_link( '%link', '%title ' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '' ); ?>
-			</div>
+    <div class="prev-next-links">
+			<?php previous_post_link( '%link', '' . _x( '&larr;', 'Previous post link', 'twentyten' ) . ' %title' ); ?>
+			<?php next_post_link( '%link', '%title ' . _x( '&rarr;', 'Next post link', 'twentyten' ) . '' ); ?>
+			<div class="clear"></div>
+		</div>
 
-      <div class="post-comments">
-				<?php comments_template( '', true ); ?>
-			</div>
+    <div class="post-comments">
+			<?php comments_template( '', true ); ?>
+		</div>
+		
+	</div> <!--/post-->
 
 <?php endwhile; // end of the loop. ?>
 
@@ -57,12 +49,16 @@ get_header(); ?>
   <div id="sidebar">
     <?php get_sidebar(); ?>
   </div> <!--/sidebar-->
+  
+  <div class="clear"></div>
+</div> <!--/content-wrapper-->
 
-</div> <!--/bodywrap-->
 
-<div id="footer-wrapper">
-  <div id="footer">
+<div id="footer-wrapper" class="wrapper">
+  <div id="footer" class="section">
+    <h2 class="mast"><span>Yet Even More Stuff</span></h2>
     <?php get_footer(); ?>
-  </div>
-</div>
+  </div> <!--/footer-->
+</div> <!--/footerwrap-->
+
 

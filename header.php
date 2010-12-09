@@ -43,15 +43,17 @@
   <script type="text/javascript"> 
   
   // Function controlling the news story ticker at page top
-  function fetchTickerStory() {
-    var rand = Math.floor(Math.random()*3);
-    if (rand == 0)
-      $("#ticker").html("Colin and Kasey explore the deliciousness of Chimay Grande Reserve. <a href='#'>Watch now</a>.");
-    else if (rand == 1)
-      $("#ticker").html("Does a beer with raisins taste any good? <a href='#'>We try one</a>. <a href='#'>And another</a>.");
-    else if (rand == 2)
-      $("#ticker").html("Steve and JT get started brewing at home. It's a homebrew crash course. <a href='#'>Check it out</a>!");
-    setTimeout("fetchTickerStory();", 5000);
+  function rotateTickerBlurbs(idx, delay) {
+    if (idx == undefined) { idx = 1; }
+    if (delay == undefined) { delay = 5000; }
+    $("#ticker p").hide();
+    var blurbToShow = $("#ticker p:nth-child("+idx+")");
+    if ( blurbToShow.length == 0 ) {
+      idx = 1;
+      blurbToShow = $("#ticker p:nth-child("+idx+")");
+    }
+    blurbToShow.show();
+    setTimeout("rotateTickerBlurbs("+(idx+1)+");", delay);
     return(false);
   }
   
@@ -71,7 +73,7 @@
     });   
     
     // Kickoff the story ticker at page-top
-    setTimeout("fetchTickerStory();", 5000);
+    rotateTickerBlurbs(1, 5000);
     
   });// end ready()
   </script>
@@ -82,7 +84,10 @@
 
   <div id="ticker-wrapper" class="wrapper">
     <div id="ticker" class="section">
-      JT and Steve review the latest from Ommegang. <a href="#">Watch the video here</a>.
+      <?php 
+      $page = get_page_by_title('Ticker');
+      echo $page->post_content;
+      ?>
     </div> <!--/ticker-->
   </div> <!--/ticker-wrapper-->
 
