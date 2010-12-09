@@ -286,9 +286,8 @@ ul#menu-primary li.current-menu-item a:hover {
 #sidebar .widget-container.taxonomy {
   text-align: justify;
 }
-#sidebar .widget-container.taxonomy a:first-child {
-  clear: left;
-  display: inline-block;
+#sidebar .widget-container.taxonomy h3:after {
+  content: "<br/>";
 }
 
 
