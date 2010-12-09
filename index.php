@@ -48,7 +48,7 @@ get_header(); ?>
       <?php while (have_posts()) : the_post(); ?>
         <?php if($content = $post->post_content) : ?>
           <div class="thumb" id="thumb-<?php the_ID(); ?>">
-            <img src=" <?php echo extract_youtube_thumb_url($content) ?>"/>
+            <img id="img-<?php the_ID(); ?>" src="<?php echo extract_youtube_thumb_url($content) ?>"/>
             <h3><a href="#"><?php echo get_the_title($post->ID); ?></a></h3>
             <?php if (false) :  // hiding the tags for now ?>
             <?php if ( $posttags = get_the_tags() ) :

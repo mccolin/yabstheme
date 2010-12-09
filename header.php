@@ -57,6 +57,32 @@
     return(false);
   }
   
+  // Function rotating thumbnails of a Youtube image
+  var THUMB_TIMER = null;
+  function rotateYouTubeThumb(imgId) {
+    var img = $("#"+imgId);
+    var src = img.attr("src");              // eg: http://img.youtube.com/vi/1U7bigXhRI4/0.jpg
+    var basename = src.split("/").pop();
+    var idx = basename.split(".", 1) * 1;
+    var newIdx = idx + 1;
+    if (newIdx > 3) { newIdx = 0 };
+    newSrc = src.replace(basename, newIdx+".jpg");
+    img.attr("src", newSrc);
+    THUMB_TIMER = setTimeout("rotateYouTubeThumb(\""+imgId+"\");", 750);
+    return(false);
+  }
+  
+  // Function to stop a thumbnail from rotating when moused off
+  function unRotateYouTubeThumb(imgId) {
+    clearTimeout(THUMB_TIMER);
+    var img = $("#"+imgId);
+    var src = img.attr("src");              // eg: http://img.youtube.com/vi/1U7bigXhRI4/0.jpg
+    var basename = src.split("/").pop();
+    newSrc = src.replace(basename, "0.jpg");
+    img.attr("src", newSrc);
+  }
+  
+  
   $(document).ready(function() {	
     //Show the first featured video and activate its thumbnail:
     $("#features .video:first").show();    
@@ -71,6 +97,20 @@
       $("#thumb-container .thumb").removeClass("active");
       $("#"+thumbId).addClass("active");
     });   
+    
+    // Add a hover-effect to all featured video thumbs
+    $("#thumb-container .thumb").mouseenter(function(){
+      var divId = $(this).attr("id");
+      var imgId = divId.replace("thumb","img");
+      rotateYouTubeThumb( imgId );
+    });
+    
+    // Unhover all featured video thumbs
+    $("#thumb-container .thumb").mouseleave(function(){
+      var divId = $(this).attr("id");
+      var imgId = divId.replace("thumb","img");
+      unRotateYouTubeThumb( imgId );
+    });
     
     // Kickoff the story ticker at page-top
     rotateTickerBlurbs(1, 5000);
