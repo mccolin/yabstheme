@@ -598,6 +598,20 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
 
 /** THE BIG BEER LIST **/
 
+table#beer-list-legend {
+  border: 2px solid #333;
+}
+#beer-list-legend td, #beer-list-legend th {
+  border-right: 1px solid #CCC;
+  padding: 6px 4px;
+}
+#beer-list-legend th {
+  background: #666;
+  color: #FFF;
+  font-weight: bold;
+}
+
+
 table#big-beer-list {
   border: 2px solid #333;
   width: 100%;

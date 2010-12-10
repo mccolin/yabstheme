@@ -87,9 +87,9 @@
   <tr>
     <td><a href="<?php the_permalink(); ?>"><?php echo $beer_name ?></a></td>
     <td><?php if ($brewery_terms) { echo $brewery_terms; } else { echo "Not Sure"; } ?></td>
-    <td><?php if ($style_terms) { echo $style_terms; } else { echo "Mystery"; } ?></td>
-    <td><?php if ($beer_avail) { echo $beer_avail; } else { echo "Unknown"; } ?></td>
-    <td><?php if ($beer_abv) { echo $beer_abv . "%"; } else { echo "Unknown"; } ?></td>
+    <td><?php if ($style_terms) { echo $style_terms; } else { echo "N/A"; } ?></td>
+    <td><?php if ($beer_avail) { echo $beer_avail; } else { echo "N/A"; } ?></td>
+    <td><?php if ($beer_abv) { echo $beer_abv . "%"; } else { echo "N/A"; } ?></td>
     <td>
       <!-- Reviewers -->
       <?php 
