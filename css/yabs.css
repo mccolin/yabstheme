@@ -59,6 +59,7 @@ a:visited {}
 #ticker {
   color: #FFF;
   font-size: 12px;
+  height: 15px;
   padding: 10px 0;
 }
 #ticker a {
