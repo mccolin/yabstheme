@@ -121,16 +121,16 @@ ul#menu-primary li a {
 ul#menu-primary li a:hover {
 }
 
-ul#menu-primary li.current-menu-item {
+ul#menu-primary li.current-menu-item, ul#menu-primary li.current-post-ancestor {
   background: #FFF;
   border: 2px solid #D27A20;
   font-weight: bold;
 }
-ul#menu-primary li.current-menu-item a {
+ul#menu-primary li.current-menu-item a, ul#menu-primary li.current-post-ancestor a {
   background: #FFF;
   color: #5F5E42;
 }
-ul#menu-primary li.current-menu-item a:hover {
+ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-ancestor a:hover {
 
 }
 
@@ -300,6 +300,9 @@ ul#menu-primary li.current-menu-item a:hover {
 
 #sidebar .widget-container.taxonomy {
   text-align: justify;
+}
+#sidebar .widget-container.taxonomy h3 {
+  margin-right: 125px;
 }
 
 
