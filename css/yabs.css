@@ -595,3 +595,47 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
 }
 
 
+
+/** THE BIG BEER LIST **/
+
+table#big-beer-list {
+  border: 2px solid #333;
+  width: 100%;
+}
+#big-beer-list a {
+  color: #D27A20;
+  text-decoration: none;
+}
+#big-beer-list a:hover {
+  text-decoration: underline;
+}
+#big-beer-list tr:hover {
+  background: #EEE;
+}
+#big-beer-list th, #big-beer-list td {
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  line-height: 1.2;
+  padding: 3px 4px;
+}
+#big-beer-list th {
+  background: #666;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 14px;
+}
+#big-beer-list td:first-child {
+  font-weight: bold;
+}
+#big-beer-list th.rec, #big-beer-list td.rec {
+  text-align: center;
+  width: 42px;
+}
+
+
+
+
+
+
+
+

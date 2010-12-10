@@ -570,3 +570,37 @@ function extract_youtube_thumb_url($content) {
 }
 
 
+
+
+/**
+ * Extract the appropriate review given the reviewers, recommendations, 
+ * and desired reviewer name. This will return one of the following:
+ *   Highly Recommends
+ *   Recommends
+ *   Recommends with Conditions
+ *   Does Not Recommend
+ */
+function recommendation_from_reviewer($reviewer, $rev1, $rev2, $rec1, $rec2) {
+  if ($rev1 == $reviewer) { return $rec1; }
+  elseif ($rev2 == $reviewer) { return $rec2; }
+  else { return "Did Not Review"; }
+}
+
+/** Given recommendation info, spit out the url to the appropriate thumbnail image */
+function recommendation_image_from_reviewer($reviewer, $rev1, $rev2, $rec1, $rec2) {
+  $rec = recommendation_from_reviewer($reviewer, $rev1, $rev2, $rec1, $rec2);
+
+  if ($rec == "Highly Recommends")
+    return get_bloginfo('template_url') . "/images/rec_high.png";
+  elseif ($rec == "Recommends")
+    return get_bloginfo('template_url') . "/images/rec_norm.png";
+  elseif ($rec == "Recommends with Conditions")
+    return get_bloginfo('template_url') . "/images/rec_cond.png";
+  elseif ($rec == "Does Not Recommend")
+    return get_bloginfo('template_url') . "/images/rec_no.png";
+  else
+    return get_bloginfo('template_url') . "/images/rec_missing.png";
+}
+
+
+

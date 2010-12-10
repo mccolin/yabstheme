@@ -11,7 +11,7 @@ get_header(); ?>
 
 <div id="content-wrapper" class="wrapper">
   
-  <div id="content" class="section">
+  <div id="content" class="section full-width">
     
     <div class="page-content">
 			<h1>The Beer List</h1>
@@ -30,10 +30,6 @@ get_header(); ?>
 		</div>
 			
 	</div> <!--/content-->
-
-  <div id="sidebar">
-    <?php get_sidebar(); ?>
-  </div> <!--/sidebar-->
 
 <div class="clear"></div>
 </div> <!--/content-wrapper-->

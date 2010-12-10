@@ -20,51 +20,102 @@
 ?>
 
 <?php
-  /* Adjust the video gallery to shown 12 episodes per page */
+  /* On the beer loop, we want to show all beers on a single page. We still pull
+   * the page from query in case this behavior changes in the future */
   $page = get_query_var('paged');
-  query_posts($query_string . '&cat=4&posts_per_page=12&paged='. $page );
+  query_posts($query_string . "&category_name=beer&posts_per_page=-1&paged=$page" );
+  
+  /* Crib Sheet for Query Post Adjustments
+   *  meta_key=yabs_beer_abv
+   *  orderby: meta_value, meta_value_num, date, title, author, rand, comment_count
+   *  order: ASC, DESC
+   *  meta_key, meta_value, meta_compare("=","!=",">",etc.)
+   */
 ?>
 
 
-<?php
-	/* Start the Loop.
-	 *
-	 * In Twenty Ten we use the same loop in multiple contexts.
-	 * It is broken into three main parts: when we're displaying
-	 * posts that are in the gallery category, when we're displaying
-	 * posts in the asides category, and finally all other posts.
-	 *
-	 * Additionally, we sometimes check for whether we are on an
-	 * archive page, a search page, etc., allowing for small differences
-	 * in the loop on each template without actually duplicating
-	 * the rest of the loop that is shared.
-	 *
-	 * Without further ado, the loop:
-	 */ ?>
+<table id="big-beer-list">
+  <tr>
+    <th>Beer</th>
+    <th>Brewery</th>
+    <th>Style</th>
+    <th>Availability</th>
+    <th>ABV</th>
+    <th>Reviewers</th>
+    <th class="rec">JT</th>
+    <th class="rec">Colin</th>
+    <th class="rec">Steve</th>
+    <th class="rec">Kasey</th>
+    <th class="rec">Chris</th>
+  </tr>
+  
+<?php /* Loop through each of the beers */ ?>
 <?php while ( have_posts() ) : the_post(); ?>
   
-  <?php if($content = $post->post_content) : ?>
-  <div class="video" id="video-<?php the_ID(); ?>">
-    <h3><a href="<?php the_permalink(); ?>"><?php echo get_the_title($post->ID); ?></a></h3>
-    <div class="clip">
-      <a href="<?php the_permalink(); ?>"><img id="img-<?php the_ID(); ?>" src="<?php echo extract_youtube_thumb_url($content) ?>"/></a>
-    </div>
-    <div class="excerpt">
-      <span class="dateline"><?php the_time(get_option('date_format')); ?></span>
-      <?php the_excerpt(); ?>
-    
-      <?php if (false) :  // hiding the tags for now ?>
-      <?php if ( $posttags = get_the_tags() ) :
-        foreach($posttags as $tag) { echo $tag->name . "&nbsp;"; }
-      endif; ?>
-      <?php endif; ?>
-    </div>
-  </div>
+  <?php
+  /* Taxonomy facts: Style and Brewer */
+  $style_terms = get_the_term_list( $post->ID, 'beer', '', ', ', '');
+  $brewery_terms = get_the_term_list( $post->ID, 'brewery', '', ', ', '');
+  
+  /* Custom Field Facts: */
+  $fields = get_post_custom( $post->ID );
+  $beer_name = $fields['yabs_beer_name'][0];
+  $beer_abv = $fields['yabs_beer_abv'][0];
+  $beer_avail = $fields['yabs_beer_avail'][0];  
+  $beer_reviewer1 = $fields['yabs_reviewer1'][0];
+  $beer_reviewer2 = $fields['yabs_reviewer2'][0];
+  $beer_reviewer_guests = $fields['yabs_reviewer_guests'][0];
+  $beer_recommend1 = $fields['yabs_recommend1'][0];
+  $beer_recommend2 = $fields['yabs_recommend2'][0];  
+  ?>
+  
+  <?php if($beer_name) :?>
+  
+  <tr>
+    <td><a href="<?php the_permalink(); ?>"><?php echo $beer_name ?></a></td>
+    <td><?php if ($brewery_terms) { echo $brewery_terms; } else { echo "Not Sure"; } ?></td>
+    <td><?php if ($style_terms) { echo $style_terms; } else { echo "Mystery"; } ?></td>
+    <td><?php if ($beer_avail) { echo $beer_avail; } else { echo "Unknown"; } ?></td>
+    <td><?php if ($beer_abv) { echo $beer_abv . "%"; } else { echo "Unknown"; } ?></td>
+    <td>
+      <!-- Reviewers -->
+      <?php 
+        if ($beer_reviewer1) { 
+          echo $beer_reviewer1; 
+          if ($beer_reviewer2) { echo ", " . $beer_reviewer2; }
+          if ($beer_reviewer_guests) { echo " with guests"; }
+        }
+        else { echo "The Show"; }
+      ?>
+    </td>
+    <td class="rec">
+      <!-- JT's Recommendation -->
+      <img src="<?php echo recommendation_image_from_reviewer("JT", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="JT <?php echo recommendation_from_reviewer("JT", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+    </td>
+    <td class="rec">
+      <!-- Colin's Recommendation -->
+      <img src="<?php echo recommendation_image_from_reviewer("Colin", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="Colin <?php echo recommendation_from_reviewer("Colin", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+    </td>
+    <td class="rec">
+      <!-- Steve's Recommendation -->
+      <img src="<?php echo recommendation_image_from_reviewer("Steve", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="Steve <?php echo recommendation_from_reviewer("Steve", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+    </td>
+    <td class="rec">
+      <!-- Kasey's Recommendation -->
+      <img src="<?php echo recommendation_image_from_reviewer("Kasey", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="Kasey <?php echo recommendation_from_reviewer("Kasey", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+    </td>
+    <td class="rec">
+      <!-- Chris' Recommendation -->
+      <img src="<?php echo recommendation_image_from_reviewer("Chris", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="Chris <?php echo recommendation_from_reviewer("Chris", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+    </td>
+  </tr>
+  
   <?php endif; ?>
-
+  
+  
 
 <?php endwhile; // End the loop. Whew. ?>
-
+</table>
 
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
