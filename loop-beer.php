@@ -23,7 +23,21 @@
   /* On the beer loop, we want to show all beers on a single page. We still pull
    * the page from query in case this behavior changes in the future */
   $page = get_query_var('paged');
-  query_posts($query_string . "&category_name=beer&posts_per_page=-1&paged=$page" );
+  
+  /*
+  $orderby = get_query_var('orderby');
+  $order = get_query_var('order');
+  if ($orderby == "beer_name") { $orderby == "meta_value"; $meta_key == "yabs_beer_name"; }
+  elseif ($orderby == "abv") { $orderby = "meta_value_num"; $meta_key == "yabs_beer_abv"; }
+  elseif ($orderby == "avail") { $orderby == "meta_value"; $meta_key == "yabs_beer_avail"; }
+  */
+  
+  $args = array(
+    'category_name' => 'beer',
+    'posts_per_page' => -1,
+    'paged' => $page
+  );  
+  query_posts( $args );
   
   /* Crib Sheet for Query Post Adjustments
    *  meta_key=yabs_beer_abv
@@ -33,15 +47,14 @@
    */
 ?>
 
-
 <table id="big-beer-list">
   <tr>
-    <th>Beer</th>
-    <th>Brewery</th>
-    <th>Style</th>
-    <th>Availability</th>
-    <th>ABV</th>
-    <th>Reviewers</th>
+    <th class="sortable-text">Beer</th>
+    <th class="sortable-text">Brewery</th>
+    <th class="sortable-text">Style</th>
+    <th class="sortable-text">Availability</th>
+    <th class="sortable-numeric">ABV</th>
+    <th class="sortable-text">Reviewers</th>
     <th class="rec">JT</th>
     <th class="rec">Colin</th>
     <th class="rec">Steve</th>
@@ -83,7 +96,7 @@
         if ($beer_reviewer1) { 
           echo $beer_reviewer1; 
           if ($beer_reviewer2) { echo ", " . $beer_reviewer2; }
-          if ($beer_reviewer_guests) { echo " with guests"; }
+          elseif ($beer_reviewer_guests) { echo " with guests"; }
         }
         else { echo "The Show"; }
       ?>

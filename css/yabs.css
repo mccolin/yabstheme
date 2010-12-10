@@ -624,6 +624,9 @@ table#big-beer-list {
   font-weight: bold;
   font-size: 14px;
 }
+#big-beer-list th a {
+  color: #FFF;
+}
 #big-beer-list td:first-child {
   font-weight: bold;
 }

@@ -9,6 +9,8 @@
 
 get_header(); ?>
 
+<script src="<?php echo get_bloginfo('template_url') . "/js/tablesort.js"; ?>"></script>
+
 <div id="content-wrapper" class="wrapper">
   
   <div id="content" class="section full-width">
@@ -26,6 +28,12 @@ get_header(); ?>
 			/* Run the beer loop */
 			get_template_part( 'loop', 'beer' );
 			?>
+			
+			<p>If you can't find a beer you're looking for, you can always 
+			  <a href="/contact">suggest a new beer for us to try on our contact page</a>. We try
+			  our best to listen to all requests and bring you the most interesting and original
+			  beers we can find that are also accessible.
+			</p>
 			
 		</div>
 			
