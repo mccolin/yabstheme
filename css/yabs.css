@@ -303,6 +303,35 @@ ul#menu-primary li.current-menu-item a:hover {
 }
 
 
+/** CUSTOM SIDEBAR ALMOST-WIDGETS FOR EACH BEER **/
+
+#sidebar .beer_facts h4, #sidebar .review_details h4 {
+  font-size: 1.2em;
+}
+#sidebar .beer_facts p, #sidebar .review_details p {
+  line-height: 1.5;
+  margin-bottom: 0.75em;
+}
+#sidebar .beer_facts table, #sidebar .review_details table {
+  width: 270px;
+}
+#sidebar .beer_facts tr:hover, #sidebar .review_details tr:hover {
+  background: #E4E3D0;
+}
+#sidebar .beer_facts th, #sidebar .review_details th {
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 0 15px 0 5px;
+  width: 75px;
+}
+#sidebar .beer_facts td, #sidebar .review_details td {
+  line-height: 1.5;
+  padding: 5px;
+}
+
+
+
+
 /** FOOTER WIDGETS **/
 
 #footer h2.mast {
@@ -377,7 +406,7 @@ ul#menu-primary li.current-menu-item a:hover {
   display: block;
   font-size: 0.9em;
   font-weight: bold;
-  padding: 2px 0 10px;
+  padding: 25px 0 10px;
 }
 .post .body-content, .page-content .body-content {
   line-height: 1.5;

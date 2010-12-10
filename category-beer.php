@@ -15,17 +15,18 @@ get_header(); ?>
     
     <div class="page-content">
 			<h1>The Beer List</h1>
-			<?php
-				$category_description = category_description();
-				if ( ! empty( $category_description ) )
-					echo '' . $category_description . '';
+			
+			<p>This page contains a list of the beers we've reviewed on our show. You can
+			  find the beer based on its name, type, brewery, or our recommendation. Clicking
+			  on a beer will take you to a page describing the beer and displaying the episode
+			  in which the beer was featured.<br/><br/>
+		  </p>
 
-			/* Run the loop for the category page to output the posts.
-			 * If you want to overload this in a child theme then include a file
-			 * called loop-category.php and that will be used instead.
-			 */
+			<?php
+			/* Run the beer loop */
 			get_template_part( 'loop', 'category' );
 			?>
+			
 		</div>
 			
 	</div> <!--/content-->

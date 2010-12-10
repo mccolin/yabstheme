@@ -9,6 +9,13 @@
 
 get_header(); ?>
 
+<?php
+  if (in_category("beer")) :
+    get_template_part("single","beer");
+  else :
+?>
+
+
 <div id="content-wrapper" class="wrapper">
   
   <div id="content" class="section">
@@ -53,8 +60,11 @@ get_header(); ?>
     <?php get_sidebar(); ?>
   </div> <!--/sidebar-->
   
+
   <div class="clear"></div>
 </div> <!--/content-wrapper-->
+
+<?php endif; // beer category check?>
 
 
 <div id="footer-wrapper" class="wrapper">
