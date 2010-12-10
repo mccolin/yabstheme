@@ -121,7 +121,12 @@ ul#menu-primary li a {
 ul#menu-primary li a:hover {
 }
 
-ul#menu-primary li.current-menu-item, ul#menu-primary li.current-post-ancestor {
+ul#menu-primary li.current-menu-item {
+  background: #FFF;
+  border: 2px solid #D27A20;
+  font-weight: bold;
+}
+ul#menu-primary li.current-post-ancestor { /* :nth-child(3) */
   background: #FFF;
   border: 2px solid #D27A20;
   font-weight: bold;
@@ -219,7 +224,19 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
 }
 
 
-/** PRIMARY ARTICLE CONTENT **/
+/** COMMENT SECTION WHEN ABOVE FOOTER **/
+
+#comments-wrapper {
+  background-color: #F5F4F2;
+  border-top: 2px solid #666;
+  color: #333;
+}
+#comments-section {
+  padding-bottom: 75px;
+}
+#comments-section .mast span {
+  background: #666;
+}
 
 
 
@@ -227,7 +244,7 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
 /** FOOTER DESIGN **/
 
 #footer-wrapper {
-  background-color: #F5F4F2;
+  background-color: #E4E3D0;
   border-top: 2px solid #666;
   color: #333;
 }

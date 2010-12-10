@@ -16,11 +16,11 @@ get_header(); ?>
 ?>
 
 
+<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+
 <div id="content-wrapper" class="wrapper">
   
   <div id="content" class="section">
-
-<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
   <div class="post">
 		<h2><?php the_title(); ?></h2>
@@ -46,13 +46,10 @@ get_header(); ?>
 			<div class="clear"></div>
 		</div>
 
-    <div class="post-comments">
-			<?php comments_template( '', true ); ?>
-		</div>
 		
 	</div> <!--/post-->
 
-<?php endwhile; // end of the loop. ?>
+
 
   </div> <!--/content-->
 
@@ -63,6 +60,22 @@ get_header(); ?>
 
   <div class="clear"></div>
 </div> <!--/content-wrapper-->
+
+<div id="comments-wrapper" class="wrapper">
+  <div id="comments-section" class="section">
+    <h2 class="mast"><span>Discuss <?php the_title(); ?></span></h2>
+    <p>Blah blah blah</p>
+    
+    <div class="post-comments">
+			<?php comments_template( '', true ); ?>
+		</div>
+		    
+  </div>
+</div>
+
+
+
+<?php endwhile; // end of the loop. ?>
 
 <?php endif; // beer category check?>
 

@@ -24,7 +24,7 @@ get_header(); ?>
 
 			<?php
 			/* Run the beer loop */
-			get_template_part( 'loop', 'category' );
+			get_template_part( 'loop', 'beer' );
 			?>
 			
 		</div>
