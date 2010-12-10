@@ -56,8 +56,8 @@
     <th class="sortable-numeric">ABV</th>
     <th class="sortable-text">Reviewers</th>
     <th class="rec">JT</th>
-    <th class="rec">Colin</th>
     <th class="rec">Steve</th>
+    <th class="rec">Colin</th>
     <th class="rec">Kasey</th>
     <th class="rec">Chris</th>
   </tr>
@@ -106,12 +106,12 @@
       <img src="<?php echo recommendation_image_from_reviewer("JT", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="JT <?php echo recommendation_from_reviewer("JT", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
     </td>
     <td class="rec">
-      <!-- Colin's Recommendation -->
-      <img src="<?php echo recommendation_image_from_reviewer("Colin", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="Colin <?php echo recommendation_from_reviewer("Colin", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
-    </td>
-    <td class="rec">
       <!-- Steve's Recommendation -->
       <img src="<?php echo recommendation_image_from_reviewer("Steve", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="Steve <?php echo recommendation_from_reviewer("Steve", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+    </td>
+    <td class="rec">
+      <!-- Colin's Recommendation -->
+      <img src="<?php echo recommendation_image_from_reviewer("Colin", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="Colin <?php echo recommendation_from_reviewer("Colin", $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
     </td>
     <td class="rec">
       <!-- Kasey's Recommendation -->
