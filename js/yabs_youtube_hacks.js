@@ -22,7 +22,7 @@ function rotateYouTubeThumb(imgId) {
  var basename = src.split("/").pop();
  var idx = basename.split(".", 1) * 1;
  var newIdx = idx + 1;
- if (newIdx > 3) { newIdx = 0 };
+ if (newIdx > 3) { newIdx = 1 };
  newSrc = src.replace(basename, newIdx+".jpg");
  img.attr("src", newSrc);
  THUMB_TIMER = setTimeout("rotateYouTubeThumb(\""+imgId+"\");", 750);
@@ -93,7 +93,7 @@ $(function() {
   // Add a hover-killer on the gallery page, too:
   $(".gallery .video").mouseleave(function(){
     var divId = $(this).attr("id");
-    var imgId = divId.replace("thumb","img");
+    var imgId = divId.replace("video","img");
     resetYouTubeThumb(imgId);
   });
   
