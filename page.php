@@ -8,8 +8,8 @@
  * different template.
  *
  * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.0
+ * @subpackage YetAnotherBeerShow
+ * @since YetAnotherBeerShow 0.9
  */
 
 get_header(); ?>
