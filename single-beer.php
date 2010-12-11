@@ -152,7 +152,6 @@ get_header(); ?>
 <div id="comments-wrapper" class="wrapper">
   <div id="comments-section" class="section">
     <h2 class="mast"><span>Discuss <?php the_title(); ?></span></h2>
-    <p>Blah blah blah</p>
     
     <div class="post-comments">
 			<?php comments_template( '', true ); ?>
