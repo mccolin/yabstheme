@@ -9,8 +9,6 @@
 
 get_header(); ?>
 
-<script src="<?php echo get_bloginfo('template_url') . "/js/tablesort.js"; ?>"></script>
-
 <div id="content-wrapper" class="wrapper">
   
   <div id="content" class="section full-width">

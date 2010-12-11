@@ -19,6 +19,8 @@
  */
 ?>
 
+<script src="<?php echo get_bloginfo('template_url') . "/js/tablesort.js"; ?>"></script>
+
 <?php
   /* On the beer loop, we want to show all beers on a single page. We still pull
    * the page from query in case this behavior changes in the future */
