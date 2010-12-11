@@ -583,6 +583,9 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
   overflow: hidden;
   padding: 5px;
 }
+.page-content .gallery .video .excerpt .dateline {
+  padding: 5px 0;
+}
 
 .page-content .gallery .video:hover {
   position: relative;
