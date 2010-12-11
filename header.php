@@ -16,7 +16,7 @@
 <?php if (have_posts()):while(have_posts()):the_post();endwhile;endif;?>
 <!-- Facebook Opengraph -->
   <meta property="fb:app_id" content="your_app_id" />
-  <meta property="fb:admins" content="your_admin_id" />
+  <meta property="fb:admins" content="11308679,10603565" />
   <meta property="og:url" content="<?php the_permalink() ?>"/>
 <?php if (is_single()) { ?>
   <meta property="og:title" content="<?php single_post_title(''); ?>" />
