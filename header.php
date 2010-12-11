@@ -31,8 +31,10 @@
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
   <meta property="og:description" content="<?php bloginfo('description'); ?>" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="<?php bloginfo('template_url') ?>/path/to-your/logo.jpg" />
+  <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogotxt.png" />
 <?php } ?>
+<?php rewind_posts(); ?>
+<?php wp_reset_query(); ?>
 
   <title><?php wp_title( '|', true, 'right' ); ?></title>
 
