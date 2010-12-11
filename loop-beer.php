@@ -130,6 +130,22 @@
 <?php endwhile; // End the loop. Whew. ?>
 </table>
 
+<br/><br/>
+
+<p>
+  <table id="beer-list-legend">
+    <tr>
+      <th><strong>Review Key:</strong></th>
+      <td><img src="<?php echo get_bloginfo('template_url') . "/images/rec_high.png"; ?>"/> Highly Recommended</td>
+      <td><img src="<?php echo  get_bloginfo('template_url') . "/images/rec_norm.png"; ?>"/> Recommended</td>
+      <td><img src="<?php echo get_bloginfo('template_url') . "/images/rec_cond.png"; ?>"/> Recommend, with Conditions</td>
+      <td><img src="<?php echo get_bloginfo('template_url') . "/images/rec_no.png"; ?>"/> Not Recommended</td>
+    </tr>
+  </table>
+  <br/><br/>
+</p>
+
+
 
 <?php /* Display navigation to next/previous pages when applicable */ ?>
 <?php if (  $wp_query->max_num_pages > 1 ) : ?>

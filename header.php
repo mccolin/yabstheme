@@ -62,7 +62,8 @@
     <div id="header" class="section">
       <h1>
     		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-    		  <img src="<?php echo get_bloginfo('template_url'); ?>/images/yabs_logo_small.png" alt="<?php bloginfo( 'name' ); ?>"/>
+    		  <!--img src="<?php echo get_bloginfo('template_url'); ?>/images/yabs_logo_small.png" alt="<?php bloginfo( 'name' ); ?>"/-->
+    		  <img src="<?php echo get_bloginfo('template_url'); ?>/images/yabslogotxt.png" alt="<?php bloginfo( 'name' ); ?>"/>
     		  <span><?php bloginfo( 'name' ); ?></span>
     		</a>
     	</h1>

@@ -28,20 +28,7 @@ get_header(); ?>
 			/* Run the beer loop */
 			get_template_part( 'loop', 'beer' );
 			?>
-			
-			<p>
-		    <table id="beer-list-legend">
-		      <tr>
-		        <th><strong>Review Key:</strong></th>
-		        <td><img src="<?php echo get_bloginfo('template_url') . "/images/rec_high.png"; ?>"/> Highly Recommended</td>
-            <td><img src="<?php echo  get_bloginfo('template_url') . "/images/rec_norm.png"; ?>"/> Recommended</td>
-            <td><img src="<?php echo get_bloginfo('template_url') . "/images/rec_cond.png"; ?>"/> Recommend, with Conditions</td>
-            <td><img src="<?php echo get_bloginfo('template_url') . "/images/rec_no.png"; ?>"/> Not Recommended</td>
-          </tr>
-        </table>
-        <br/><br/>
-		  </p>
-			
+						
 			<p>If you can't find a beer you're looking for, you can always 
 			  <a href="/contact">suggest a new beer for us to try on our contact page</a>. We try
 			  our best to listen to all requests and bring you the most interesting and original
