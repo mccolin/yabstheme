@@ -32,11 +32,24 @@
   elseif ($orderby == "avail") { $orderby == "meta_value"; $meta_key == "yabs_beer_avail"; }
   */
   
+  /* Default settings for any beer list: */
   $args = array(
     'category_name' => 'beer',
     'posts_per_page' => -1,
     'paged' => $page
-  );  
+  );
+  
+  /* Add support in this loop for taxonomy searches, if set: */
+  if ( $tax_slug = get_query_var('beer') ) {
+    $tax_term = get_term_by('slug', $tax_slug, 'beer');
+    $args['beer'] = $tax_slug;
+  }
+  elseif ( $tax_slug = get_query_var('brewery') ) {
+    $tax_term = get_term_by('slug', $tax_slug, 'brewery');
+    $args['brewery'] = $tax_slug;
+  }
+  
+  /* Finally perform the query for this beer list: */  
   query_posts( $args );
   
   /* Crib Sheet for Query Post Adjustments

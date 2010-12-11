@@ -17,13 +17,13 @@ get_header(); ?>
 <?php
   if ( get_query_var('beer') ) {
     $tax_slug = get_query_var('beer');
-    $tax_term = get_term_by('slug', $tax_slug, 'beer')->name;
-    $title = "List of $tax_term Style Beers";
+    $tax_term = get_term_by('slug', $tax_slug, 'beer');
+    $title = "List of $tax_term->name Style Beers";
   }
   elseif ( get_query_var('brewery') ) {
     $tax_slug = get_query_var('brewery');
-    $tax_term = get_term_by('slug', $tax_slug, 'brewery')->name;    
-    $title = "List of $tax_term Brews";
+    $tax_term = get_term_by('slug', $tax_slug, 'brewery');    
+    $title = "List of $tax_term->name Brews";
   }
 ?>
 
