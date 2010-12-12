@@ -24,8 +24,13 @@
   <meta property="og:type" content="article" />
   <?php if ( in_category("video", $post) ):?>
   <meta property="og:image" content="<?php echo extract_youtube_thumb_url($post->post_content) ?>" />
+  <meta property="og:video" content="<?php echo extract_youtube_video_url($post->post_content) ?>"/>
   <?php else :?>
-  <meta property="og:image" content="<?php echo wp_get_attachment_thumb_url( get_post_thumbnail_id( $post->ID ) ) ?>" />
+    <?php if ( $thumb_id = get_post_thumbnail_id($post->ID) ) {?>
+  <meta property="og:image" content="<?php echo wp_get_attachment_thumb_url($thumb_id) ?>" />
+    <?php } else { ?>
+  <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogotxt.png" />
+    <?php } ?>
   <?php endif; ?>
 <?php } else { ?>
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />

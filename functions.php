@@ -560,6 +560,15 @@ function extract_youtube_video($content, $width, $height) {
 }
 
 /**
+ * Extract only the URL for the embeddable video
+ */
+function extract_youtube_video_url($content) {
+  if ( $id = extract_youtube_id($content) ) {
+    return "http://www.youtube.com/v/{$id}?fs=1&amp;hl=en_US";
+  }
+}
+
+/**
  * Given post content which contains a YouTube embed, return the
  * video's thumbnail URL
  */
