@@ -17,7 +17,6 @@
 <!-- Facebook Opengraph -->
   <meta property="fb:app_id" content="166816876688879" />
   <meta property="fb:admins" content="11308679,10603565" />
-  <meta property="og:url" content="<?php bloginfo('url') ?>"/>
   <meta property="og:site_name" content="<?php bloginfo('name'); ?>" />
 <?php if (is_single()) { ?>
   <meta property="og:title" content="<?php single_post_title(''); ?>" />
@@ -37,6 +36,7 @@
     <?php } ?>
   <?php endif; ?>
 <?php } else { ?>
+  <meta property="og:url" content="<?php bloginfo('url') ?>"/>
   <meta property="og:description" content="<?php bloginfo('description'); ?>" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogotxt.png" />
