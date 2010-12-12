@@ -25,6 +25,8 @@
   <?php if ( in_category("video", $post) ):?>
   <meta property="og:image" content="<?php echo extract_youtube_thumb_url($post->post_content) ?>" />
   <meta property="og:video" content="<?php echo extract_youtube_video_url($post->post_content) ?>"/>
+  <meta property="og:video:height" content="250" /> 
+  <meta property="og:video:width" content="400" />
   <?php else :?>
     <?php if ( $thumb_id = get_post_thumbnail_id($post->ID) ) {?>
   <meta property="og:image" content="<?php echo wp_get_attachment_thumb_url($thumb_id) ?>" />
