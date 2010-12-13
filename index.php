@@ -106,48 +106,6 @@ get_header(); ?>
       
     </div> <!--/#player-->
     
-    
-    
-    
-    
-    
-    <?php if (false):    /******* BEGIN OLD FEATURES AND THUMBNAIL ********/ ?>
-    <div id="player">
-      <div id="video-container">
-      <?php $temp_query = $wp_query; ?>
-      <?php query_posts('category_name=video&showposts=4'); ?>
-      <?php while (have_posts()) : the_post(); ?>
-        <!-- FEATURED VIDEO POST: ID: <?php the_ID(); ?> -->
-        <div class="video" id="video-<?php the_ID(); ?>">
-          <?php if($content = $post->post_content) : ?>
-            <?php echo extract_youtube_video($content, 490, 300) ?>
-          <?php endif; ?>
-        </div>
-      <?php endwhile; ?>
-      <?php wp_reset_query();?>
-      </div> <!--/video-container-->
-    
-      <div id="thumb-container">
-      <?php $temp_query = $wp_query; ?>
-      <?php query_posts('category_name=video&showposts=4'); ?>
-      <?php while (have_posts()) : the_post(); ?>
-        <?php if($content = $post->post_content) : ?>
-          <div class="thumb" id="thumb-<?php the_ID(); ?>">
-            <img id="img-<?php the_ID(); ?>" src="<?php echo extract_youtube_thumb_url($content) ?>"/>
-            <h3><a href="#"><?php echo get_the_title($post->ID); ?></a></h3>
-            <?php if (false) :  // hiding the tags for now ?>
-            <?php if ( $posttags = get_the_tags() ) :
-              foreach($posttags as $tag) { echo $tag->name . "&nbsp;"; }
-            endif; ?>
-            <?php endif; ?>
-          </div>
-        <?php endif; ?>
-      <?php endwhile; ?>
-      <?php wp_reset_query();?>
-      </div> <!--/thumb-container-->
-    </div> <!--/player-->
-    <?php endif;   /**************** END OLD VIDEO AND THUMBNAILS **********/ ?>
-    
     <div class="clear"></div>
   </div> <!--/features-->
   
