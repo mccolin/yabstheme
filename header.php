@@ -51,7 +51,12 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <!-- YABS Scripts -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+  <script src="http://www.google.com/jsapi"></script> 
+  <script> 
+    /* Load the JQuery and SWFObject library through Google JSAPIs */
+    google.load("jquery", "1.4.4");
+    google.load("swfobject", "2.1");
+  </script>
   <script type="text/javascript" src="<?php echo get_bloginfo('template_url') . "/js/yabs_youtube_hacks.js" ?>"></script>
   <script type="text/javascript" src="<?php echo get_bloginfo('template_url') . "/js/yabs_ticker.js" ?>"></script>
 
