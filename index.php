@@ -21,12 +21,97 @@ get_header(); ?>
   <div id="features" class="section">
     <div id="intro">
       <?php 
-      $page = get_page_by_title('Intro');
-      $content = $page->post_content;
-      echo $content
+      if ($page = get_page_by_title('Intro')) :
+        $content = $page->post_content;
+        echo $content;
+      else : ?>
+        <h2>We love beer and you can, too!</h2>
+        <p>Welcome to <strong>Yet Another Beer Show</strong>. We are a video
+          beer review show, giving you at least two dudes reviewing one beer,
+          nearly every day of the week!</p>
+        <p>Check out any of our episodes or look through the extensive list of
+          beers we've reviewed to find something perfect for you.</p>
+        <p>
+          <a href="/topics/beer">Find a beer</a> or
+          <a href="/topics/video">Watch an epsiode</a>
+        </p>
+      <?php endif;
       ?>
     </div>
     
+    
+    <div id="player-container">
+      
+      <div id="player">
+        <div id="featured_video_player"> 
+          You need Flash player 8+ and JavaScript enabled to view this video.
+        </div> 
+        <script type="text/javascript"> 
+          // <![CDATA[
+          // Prepare the video player:
+          var params = { allowScriptAccess: "always", bgcolor: "#BE8F4B", wmode: "transparent" };
+          var attr = { id: "yabs_video_player" };
+          swfobject.embedSWF("http://www.youtube.com/apiplayer?enablejsapi=1&playerapiid=ytplayer", 
+                             "featured_video_player", "490", "275", "8", null, null, params, attr);
+          //]]>
+        </script>
+      
+        <div id="featured_video_controls">
+          <a href="#__" class="play-button" onclick="playVideo();"></a>
+          <a href="#__" class="pause-button" onclick="pauseVideo();"></a>
+          <!-- a href="#__" class="stop-button" onclick="stopVideo();">Stop</a -->
+          <div class="progress"><div class="progress load"><div class="progress play"></div></div></div>
+          
+          <!-- Disable Volume Control
+          <a href="#__" class="mute-button" onclick="muteVideo();">Mute</a>
+          <a href="#__" class="unmute-button" onclick="unMuteVideo();">Unmute</a>
+          -->
+        </div>
+      
+        <div id="featured_video_notes">
+          This div will contain notes about the currently playing video, as well as
+          a link to the full entry.
+        </div>
+      </div>
+      
+      <!-- Featured Videos Thumbnails -->
+      <div id="featured_video_thumbs">
+        <?php
+          $temp_query = $wp_query;
+          $args = array(
+            'category_name' => 'video',
+            'showposts' => 4
+          );
+          query_posts($args);
+          while ( have_posts() ): the_post();
+            if ($content = $post->post_content):
+              $wp_id = $post->ID;
+              $yt_id = extract_youtube_id($content);
+              $yt_url = extract_youtube_thumb_url($content);
+        ?>
+        <div class="thumb" id="thumb-<?php echo $wp_id;?>-<?php echo $yt_id;?>">
+          <img id="img-<?php echo $wp_id;?>-<?php echo $yt_id;?>" src="<?php echo $yt_url;?>"/>
+          <span class="video_info">
+            <h3><a href="#__" onclick="loadVideo('<?php echo $yt_id;?>');"><?php echo get_the_title($post->ID); ?></a></h3>
+            <span class="excerpt"><?php the_excerpt(); ?></span>
+          </span>
+        </div>
+        
+        <?php 
+            endif; 
+          endwhile; 
+          wp_reset_query();
+        ?>
+      </div>
+      
+    </div> <!--/#player-->
+    
+    
+    
+    
+    
+    
+    <?php if (false):    /******* BEGIN OLD FEATURES AND THUMBNAIL ********/ ?>
     <div id="player">
       <div id="video-container">
       <?php $temp_query = $wp_query; ?>
@@ -61,6 +146,7 @@ get_header(); ?>
       <?php wp_reset_query();?>
       </div> <!--/thumb-container-->
     </div> <!--/player-->
+    <?php endif;   /**************** END OLD VIDEO AND THUMBNAILS **********/ ?>
     
     <div class="clear"></div>
   </div> <!--/features-->

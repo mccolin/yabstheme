@@ -57,6 +57,7 @@
     google.load("jquery", "1.4.4");
     google.load("swfobject", "2.1");
   </script>
+  <script type="text/javascript" src="<?php echo get_bloginfo('template_url') . "/js/yabs_youtube_player.js" ?>"></script>
   <script type="text/javascript" src="<?php echo get_bloginfo('template_url') . "/js/yabs_youtube_hacks.js" ?>"></script>
   <script type="text/javascript" src="<?php echo get_bloginfo('template_url') . "/js/yabs_ticker.js" ?>"></script>
 

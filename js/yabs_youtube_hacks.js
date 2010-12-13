@@ -57,29 +57,31 @@ function resetYouTubeThumb(imgId) {
  *  * Attaches unRotateYouTubeThumb() to all thumb mouseleave events
  */
 $(function() {
-  //Show the first featured video and activate its thumbnail:
-  $("#features .video:first").show();    
-  $("#thumb-container .thumb:first").addClass("active");
-  
+
   // Add click actions to all of the featured video thumbs on index
-  $("#thumb-container .thumb").click(function(){
-    var thumbId = $(this).attr("id");
-    var vidId = thumbId.replace("thumb","video");
-    $("#features .video").hide();
-    $("#"+vidId).show();
-    $("#thumb-container .thumb").removeClass("active");
-    $("#"+thumbId).addClass("active");
-  });   
+  $("#featured_video_thumbs .thumb").click(function(){
+    var vidId = $(this).attr("id").split("-")[2];
+    $("#featured_video_thumbs .thumb").removeClass("active");
+    $(this).addClass("active");
+    $("#featured_video_notes").html( $(this).children(".video_info").html() );
+    loadVideo(vidId);
+  });
+  
+  $("#featured_video_thumbs .thumb:first").bind("loadready", function(){
+    $(this).addClass("active");
+    $("#featured_video_notes").html( $(this).children(".video_info").html() );
+    cueVideo( $(this).attr("id").split("-")[2] );
+  });
   
   // Add a hover-effect to all featured video thumbs on index
-  $("#thumb-container .thumb").mouseenter(function(){
+  $("#featured_video_thumbs .thumb").mouseenter(function(){
     var divId = $(this).attr("id");
     var imgId = divId.replace("thumb","img");
     rotateYouTubeThumb( imgId );
   });
   
   // Unhover all featured video thumbs on index
-  $("#thumb-container .thumb").mouseleave(function(){
+  $("#featured_video_thumbs .thumb").mouseleave(function(){
     unRotateYouTubeThumb();
   });
   
