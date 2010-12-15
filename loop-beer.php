@@ -21,9 +21,33 @@
 
 <script src="<?php echo get_bloginfo('template_url') . "/js/tablesort.js"; ?>"></script>
 
+<script>
+
+function yabsRecSortPrepareData(tdNode, innerText) {
+  var images = tdNode.getElementsByTagName("img");
+  var data = images.length ? images[0].title : "";
+  return data;
+}
+
+function yabsRecSort(rowA, rowB) {
+  var recOrder = ["Highly Recommends","Recommends","Recommends with Conditions","Does Not Recommend","Did Not Review"];
+  var cellA = rowA[fdTableSort.pos].replace(/^\S+\s+/gi, "");
+  var cellB = rowB[fdTableSort.pos].replace(/^\S+\s+/gi, "");
+      
+  //alert("Comparing \n|"+cellA+"|(idx"+recOrder.indexOf(cellA)+")\n -to- \n|"+cellB+"|(idx"+recOrder.indexOf(cellB)+")");
+  if ( recOrder.indexOf(cellA) == recOrder.indexOf(cellB) ) return 0;
+  if ( recOrder.indexOf(cellA) < recOrder.indexOf(cellB) ) return -1;
+  return 1;
+}
+
+function sortInitiatedCallback() {}
+function sortCompleteCallback() {}
+
+</script>
+
 <?php
   /* On the beer loop, we want to show all beers on a single page. We still pull
-   * the page from query in case this behavior changes in the future */
+   * the page number from query in case this behavior changes in the future */
   $page = get_query_var('paged');
   
   /*
@@ -70,11 +94,11 @@
     <th class="sortable-text">Availability</th>
     <th class="sortable-numeric">ABV</th>
     <th class="sortable-text">Reviewers</th>
-    <th class="rec">JT</th>
-    <th class="rec">Steve</th>
-    <th class="rec">Colin</th>
-    <th class="rec">Kasey</th>
-    <th class="rec">Chris</th>
+    <th class="rec sortable-yabsRecSort">JT</th>
+    <th class="rec sortable-yabsRecSort">Steve</th>
+    <th class="rec sortable-yabsRecSort">Colin</th>
+    <th class="rec sortable-yabsRecSort">Kasey</th>
+    <th class="rec sortable-yabsRecSort">Chris</th>
   </tr>
   
 <?php /* Loop through each of the beers */ ?>
