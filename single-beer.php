@@ -115,11 +115,17 @@ get_header(); ?>
 
   		    <?php if ($beer_reviewer1) :?>
           <h4><?php echo $beer_reviewer1 ?>'s Judgement:</h4>
-  		    <p><?php echo $beer_recommend1 ?></p>
+  		    <p>
+  		      <img src="<?php echo recommendation_image_from_reviewer($beer_reviewer1, $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="<?php echo $beer_reviewer1 . " " . recommendation_from_reviewer($beer_reviewer1, $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+  		      <?php echo $beer_recommend1 ?>
+  		    </p>
 
   		      <?php if ($beer_reviewer2) :?>
 		        <h4><?php echo $beer_reviewer2 ?>'s Judgement:</h4>
-    		    <p><?php echo $beer_recommend2 ?></p>
+    		    <p>
+    		      <img src="<?php echo recommendation_image_from_reviewer($beer_reviewer2, $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>" title="<?php echo $beer_reviewer2 . " " . recommendation_from_reviewer($beer_reviewer2, $beer_reviewer1, $beer_reviewer2, $beer_recommend1, $beer_recommend2); ?>"/>
+    		      <?php echo $beer_recommend2 ?>
+    		    </p>
     		    <?php endif;
     		  endif; ?>
     		  
