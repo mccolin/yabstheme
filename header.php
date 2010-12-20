@@ -21,6 +21,7 @@
 <?php if (is_single()) { ?>
   <meta property="og:title" content="<?php single_post_title(''); ?>" />
   <meta property="og:description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
+  <meta name="description" content="<?php echo strip_tags(get_the_excerpt($post->ID)); ?>" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="<?php the_permalink() ?>"/>
   <?php if ( in_category("video", $post) ):?>
@@ -40,6 +41,7 @@
   <meta property="og:description" content="<?php bloginfo('description'); ?>" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogotxt.png" />
+  <meta name="description" content="<?php bloginfo('description'); ?>" />
 <?php } ?>
 <?php rewind_posts(); ?>
 <?php wp_reset_query(); ?>
