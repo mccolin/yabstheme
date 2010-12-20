@@ -613,3 +613,25 @@ function recommendation_image_from_reviewer($reviewer, $rev1, $rev2, $rec1, $rec
 
 
 
+/** Grab the first image attachment from the current post  */
+function get_post_image($size = "thumbnail") {
+	global $post;
+	$permalink = true;
+
+	$photos = get_children( array(
+	  'post_parent' => $post->ID, 
+	  'post_status' => 'inherit', 
+	  'post_type' => 'attachment', 
+	  'post_mime_type' => 'image', 
+	  'order' => 'ASC', 
+	  'orderby' => 'menu_order ID') );
+
+	if ($photos) {
+		$photo = array_shift($photos);
+		return wp_get_attachment_link($photo->ID, $size, $permalink);
+	}
+
+	return false;
+}
+
+
