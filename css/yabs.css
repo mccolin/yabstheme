@@ -542,10 +542,10 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
   font-weight: bold;
   padding: 25px 0 10px;
 }
-.post .body-content, .page-content .body-content {
+.post .body-content, .page-content {
   line-height: 1.5;
 }
-.post .body-content p, .page-content .body-content p {
+.post .body-content p, .page-content p {
   margin-bottom: 1.25em;
   margin-top: 0.5em;
 }
