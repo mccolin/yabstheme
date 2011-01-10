@@ -561,7 +561,9 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
   list-style:decimal outside none;
 }
 .page-content ul, .page-content ul li {
-  list-style-image: url(./images/ico_beer_16.png);
+  line-height: 1.75em;
+  list-style-image: url("../images/ico_beer_16.png");
+  margin-left: 1.0em;
 }
 .page-content ol, .page-content ul {
   padding:0 1.5em 1em;
