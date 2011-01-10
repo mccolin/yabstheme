@@ -554,9 +554,19 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
   clear: both;
 }
 .post #yoast-taxonomy .taxonomy-beer {
-  color: green;
-  
+  color: green; 
 }
+
+.page-content ol, .page-content ol li {
+  list-style:decimal outside none;
+}
+.page-content ul, .page-content ul li {
+  list-style-image: url(./images/ico_beer_16.png);
+}
+.page-content ol, .page-content ul {
+  padding:0 1.5em 1em;
+}
+
 
 .post-comments {
   line-height: 1.75;
