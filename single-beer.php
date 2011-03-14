@@ -138,12 +138,14 @@ get_header(); ?>
   		  
       </li>
       
+      <?php if( false ): ?>
       <?php if( get_post_image() ): ?>
       <!-- Simulated Widget: Beer Photo -->
       <li class="widget-container beer_media" id="beer_media">
         <h3 class="widget-title"><?php if ($beer_name) { echo $beer_name; } else { echo "Beer"; } ?> Media</h3>
         <p style="text-align:center;"><?php echo get_post_image() ?></p>
       </li>
+      <?php endif; ?>
       <?php endif; ?>
       
     </ul><!--/widget region-->
