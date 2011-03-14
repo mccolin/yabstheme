@@ -513,9 +513,14 @@ ul#menu-primary li.current-menu-item a:hover, ul#menu-primary li.current-post-an
 .page-content {
   padding-top: 0;
 }
-.post a, .page-content a {}
+.post a, .page-content a {
+  color: #864E14;
+  text-decoration: none;
+}
 .post a:hover, .page-content a:hover {
+  border-bottom: 1px solid #999;
   color: #D27A20;
+  text-decoration: none;
 }
 .post h2 {
   color: #D27A20;
