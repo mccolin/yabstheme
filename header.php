@@ -33,14 +33,14 @@
     <?php if ( $thumb_id = get_post_thumbnail_id($post->ID) ) {?>
   <meta property="og:image" content="<?php echo wp_get_attachment_thumb_url($thumb_id) ?>" />
     <?php } else { ?>
-  <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogotxt.png" />
+  <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogoribbon.png" />
     <?php } ?>
   <?php endif; ?>
 <?php } else { ?>
   <meta property="og:url" content="<?php bloginfo('url') ?>"/>
   <meta property="og:description" content="<?php bloginfo('description'); ?>" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogotxt.png" />
+  <meta property="og:image" content="<?php bloginfo('template_url') ?>/images/yabslogoribbon.png" />
   <meta name="description" content="<?php bloginfo('description'); ?>" />
 <?php } ?>
 <?php rewind_posts(); ?>
@@ -90,7 +90,7 @@
     <div id="header" class="section">
       <h1>
     		<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-    		  <!--img src="<?php echo get_bloginfo('template_url'); ?>/images/yabs_logo_small.png" alt="<?php bloginfo( 'name' ); ?>"/-->
+    		  <!--OLD LOGO img src="<?php echo get_bloginfo('template_url'); ?>/images/yabs_logo_small.png" alt="<?php bloginfo( 'name' ); ?>"/-->
     		  <img src="<?php echo get_bloginfo('template_url'); ?>/images/yabslogotxt.png" alt="<?php bloginfo( 'name' ); ?>"/>
     		  <span><?php bloginfo( 'name' ); ?></span>
     		</a>
