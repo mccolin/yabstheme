@@ -36,5 +36,18 @@
 
 	wp_footer();
 ?>
+
+<!-- MixPanel -->
+<script type='text/javascript'>
+  var mp_protocol = (('https:' == document.location.protocol) ? 'https://' : 'http://'); 
+  document.write(unescape('%3Cscript src="' + mp_protocol + 'api.mixpanel.com/site_media/js/api/mixpanel.js" type="text/javascript"%3E%3C/script%3E')); 
+</script> 
+<script type='text/javascript'> 
+  try {  var mpmetrics = new MixpanelLib('c62d6b4ecb9835e7b23f82b80fca330a'); } 
+  catch(err) { 
+    null_fn = function () {}; 
+    var mpmetrics = {  track: null_fn,  track_funnel: null_fn,  register: null_fn,  register_once: null_fn, register_funnel: null_fn }; 
+  } 
+</script>
 </body>
 </html>
